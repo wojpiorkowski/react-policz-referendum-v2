@@ -378,7 +378,7 @@ export default function App() {
                 icon={Gavel}
                 title="2. Wprowadzenie Weta Obywatelskiego"
                 problem="Obywatele nie mają dziś narzędzia, by zatrzymać ustawę uchwaloną przez Parlament i podpisaną przez Prezydenta, która budzi powszechny sprzeciw społeczny."
-                postulate="Wprowadzenie instytucji Weta Obywatelskiego (referendum odrzucającego dla ustaw)."
+                postulate="Wprowadzenie instytucji Weta Obywatelskiego (referendum blokującego dla ustaw)."
                 detailLabel="Jak to działa?"
                 detailValue="Jeśli obywatele w krótkim czasie (np. 100 dni) zbiorą 500 000 podpisów, nowa ustawa trafia pod ogólnokrajowe głosowanie. Jeśli Suweren powie NIE – ustawa wraca na początek ścieżki legislacyjnej."
               />
