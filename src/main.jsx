@@ -524,21 +524,21 @@ export default function App() {
                     </span>
                   </div>
                   <input 
-                    type="range" min="0" max={data.u} step="1"
-                    className={`w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer mb-3 mt-2 transition-colors duration-300 ${collectedSignatures >= data.signatures ? 'accent-green-600' : 'accent-red-600'}`}
-                    value={collectedSignatures || 0} 
-                    onChange={(e) => setCollectedSignatures(Math.min(Number(e.target.value), data.u))}
-                  />
-                  <input 
-                    type="number" min="0" max={data.u}
-                    className="w-full border border-gray-300 rounded-md p-2 focus:ring-red-500 focus:border-red-500"
-                    value={collectedSignatures} 
-                    onChange={(e) => {
-                      const val = e.target.value === '' ? '' : Number(e.target.value);
-                      setCollectedSignatures(val !== '' ? Math.min(val, data.u) : '');
-                    }}
-                    placeholder="Wpisz dokładną liczbę..."
-                  />
+  type="range" min="0" max={Math.floor(data.u * 0.25)} step="1"
+  className={`w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer mb-3 mt-2 transition-colors duration-300 ${collectedSignatures >= data.signatures ? 'accent-green-600' : 'accent-red-600'}`}
+  value={collectedSignatures || 0} 
+  onChange={(e) => setCollectedSignatures(Math.min(Number(e.target.value), Math.floor(data.u * 0.25)))}
+/>
+<input 
+  type="number" min="0" max={Math.floor(data.u * 0.25)}
+  className="w-full border border-gray-300 rounded-md p-2 focus:ring-red-500 focus:border-red-500"
+  value={collectedSignatures} 
+  onChange={(e) => {
+    const val = e.target.value === '' ? '' : Number(e.target.value);
+    setCollectedSignatures(val !== '' ? Math.min(val, Math.floor(data.u * 0.25)) : '');
+  }}
+  placeholder="Wpisz dokładną liczbę..."
+/>
                   <div className={`mt-4 text-center font-black uppercase text-sm tracking-wide ${collectedSignatures >= data.signatures ? 'text-green-600' : 'text-red-600'}`}>
                     {collectedSignatures >= data.signatures ? 'ZEBRANO WYSTARCZAJĄCĄ ILOŚĆ PODPISÓW DO PRZEPROWADZENIA REFERENDUM' : 'NIE ZEBRANO WYSTARCZAJĄCEJ ILOŚCI PODPISÓW DO PRZEPROWADZENIA REFERENDUM'}
                   </div>
@@ -558,15 +558,21 @@ export default function App() {
   onChange={(e) => setCollectedSignatures(Math.min(Number(e.target.value), nationalU))} 
 />
                   <input 
-                    type="number" min="0" max={nationalU}
-                    className="w-full border border-gray-300 rounded-md p-2 focus:ring-red-500 focus:border-red-500"
-                    value={collectedSignatures} 
-                    onChange={(e) => {
-                      const val = e.target.value === '' ? '' : Number(e.target.value);
-                      setCollectedSignatures(val !== '' ? Math.min(val, nationalU) : '');
-                    }}
-                    placeholder="Wpisz dokładną liczbę..."
-                  />
+  type="range" min="0" max={Math.floor(nationalU * 0.25)} step="1000" 
+  className={`w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer mb-3 mt-2 transition-colors duration-300 ${collectedSignatures >= data.signatures ? 'accent-green-600' : 'accent-red-600'}`} 
+  value={collectedSignatures} 
+  onChange={(e) => setCollectedSignatures(Math.min(Number(e.target.value), Math.floor(nationalU * 0.25)))} 
+/>
+<input 
+  type="number" min="0" max={Math.floor(nationalU * 0.25)}
+  className="w-full border border-gray-300 rounded-md p-2 focus:ring-red-500 focus:border-red-500"
+  value={collectedSignatures} 
+  onChange={(e) => {
+    const val = e.target.value === '' ? '' : Number(e.target.value);
+    setCollectedSignatures(val !== '' ? Math.min(val, Math.floor(nationalU * 0.25)) : '');
+  }}
+  placeholder="Wpisz dokładną liczbę..."
+/>
                   <div className={`mt-4 text-center font-black uppercase text-sm tracking-wide ${collectedSignatures >= data.signatures ? 'text-green-600' : 'text-red-600'}`}>
                     {collectedSignatures >= data.signatures ? 'ZEBRANO WYSTARCZAJĄCĄ ILOŚĆ PODPISÓW DO PRZEPROWADZENIA REFERENDUM' : 'NIE ZEBRANO WYSTARCZAJĄCEJ ILOŚCI PODPISÓW DO PRZEPROWADZENIA REFERENDUM'}
                   </div>
