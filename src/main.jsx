@@ -928,9 +928,13 @@ export default function App() {
                 <div className="space-y-1">
                   <p>Aplikacja edukacyjna przygotowana przez Fundację Polskiego Rozwoju 🇵🇱. Dane szacunkowe na 2025.</p>
                 </div>
-                <div className="opacity-90 hover:opacity-100 transition-opacity">
-                  <FPRLogo />
-                </div>
+                <div className="mt-6 flex justify-center">
+  <img 
+    src="/logo_FPR.svg" 
+    alt="Fundacja Polskiego Rozwoju" 
+    className="h-20 w-auto opacity-90 hover:opacity-100 transition-opacity" 
+  />
+</div>
               </div>
             </div>
           </div>
