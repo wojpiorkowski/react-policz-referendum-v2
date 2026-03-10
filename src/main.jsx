@@ -914,3 +914,12 @@ export default function App() {
     </div>
   );
 }
+
+import ReactDOM from 'react-dom/client'
+
+// Renderowanie aplikacji do elementu o id "root" z pliku index.html
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)
