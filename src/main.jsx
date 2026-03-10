@@ -582,9 +582,32 @@ export default function App() {
                 </div>
               </div>
               <div className="space-y-4">
-                <label className="flex items-start gap-2 p-3 border rounded-md cursor-pointer"><input type="radio" checked={nationalType === 'art125'} onChange={() => setNationalType('art125')} /> Art. 125 (Ogólne)</label>
-                <label className="flex items-start gap-2 p-3 border rounded-md cursor-pointer"><input type="radio" checked={nationalType === 'art235'} onChange={() => setNationalType('art235')} /> Art. 235 (Konstytucyjne)</label>
-              </div>
+  <label className="flex items-start gap-2 p-3 border rounded-md cursor-pointer hover:bg-gray-50 transition-colors">
+    <input 
+      type="radio" 
+      className="mt-1 text-red-600 focus:ring-red-500" 
+      checked={nationalType === 'art125'} 
+      onChange={() => setNationalType('art125')} 
+    />
+    <div>
+      <span className="block font-medium text-gray-800">Sprawy o szczególnym znaczeniu (Art. 125)</span>
+      <span className="text-xs text-gray-500 font-normal">Wiążące przy frekwencji &gt; 50%</span>
+    </div>
+  </label>
+  
+  <label className="flex items-start gap-2 p-3 border rounded-md cursor-pointer hover:bg-gray-50 transition-colors">
+    <input 
+      type="radio" 
+      className="mt-1 text-red-600 focus:ring-red-500" 
+      checked={nationalType === 'art235'} 
+      onChange={() => setNationalType('art235')} 
+    />
+    <div>
+      <span className="block font-medium text-gray-800">Konstytucyjne (Art. 235)</span>
+      <span className="text-xs text-gray-500 font-normal">Zawsze wiążące, brak progu frekwencji</span>
+    </div>
+  </label>
+</div>
             </div>
           )}
         </div>
@@ -792,7 +815,9 @@ export default function App() {
                       <td className="px-4 py-2 font-medium text-gray-900">{item.miejsce}</td>
                       <td className="px-4 py-2">{item.data}</td>
                       <td className="px-4 py-2">{item.przedmiot}</td>
-                      <td className="px-4 py-2 text-right font-bold text-red-600">{item.frekwencja}</td>
+                      <td className={`px-4 py-2 text-right font-bold ${item.wynik.includes('Nieważne') ? 'text-red-600' : 'text-green-600'}`}>
+                      {item.frekwencja}
+                      </td>
                       <td className="px-4 py-2 text-xs text-gray-500">{item.prog}</td>
                       <td className="px-4 py-2"><span className={`px-2 py-1 rounded text-xs font-medium ${item.status === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>{item.wynik}</span></td>
                     </tr>
@@ -800,7 +825,9 @@ export default function App() {
                     <tr key={idx} className={`border-b ${idx % 2 !== 0 ? 'bg-gray-50' : ''}`}>
                       <td className="px-4 py-2 font-medium">{item.rok}</td>
                       <td className="px-4 py-2">{item.przedmiot}</td>
-                      <td className="px-4 py-2 text-right font-bold text-red-600">{item.frekwencja}</td>
+                      <td className={`px-4 py-2 text-right font-bold ${item.wynik.includes('Niewiążące') ? 'text-red-600' : 'text-green-600'}`}>
+  {item.frekwencja}
+</td>
                       <td className="px-4 py-2 text-right text-xs text-gray-500">{item.prog}</td>
                       <td className="px-4 py-2"><span className={`px-2 py-1 rounded text-xs font-medium ${item.status === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>{item.wynik}</span></td>
                     </tr>
@@ -863,7 +890,9 @@ export default function App() {
                       <td className="px-4 py-2">{item.miejsce}</td>
                       <td className="px-4 py-2">{item.data}</td>
                       <td className="px-4 py-2">{item.przedmiot}</td>
-                      <td className="px-4 py-2 text-right font-bold text-green-600">{item.frekwencja}</td>
+                     <td className={`px-4 py-2 text-right font-bold ${item.wynik.includes('Nieważne') ? 'text-red-600' : 'text-green-600'}`}>
+  {item.frekwencja}
+</td>
                       <td className="px-4 py-2 text-xs">{scope === 'local' ? "Brak" : item.prog}</td>
                       <td className="px-4 py-2">
                         <span className={`px-2 py-1 rounded text-xs font-medium ${item.status === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
