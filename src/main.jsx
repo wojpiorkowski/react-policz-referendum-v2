@@ -843,7 +843,7 @@ export default function App() {
                 ) : (
                   <EUFlagIcon className="w-12 h-12 shadow-md flex-shrink-0" />
                 )}
-                <span className="text-center">{showExternalComparison ? "Ukryj historię z Unii Europejskiej" : (scope === 'local' ? "Historyczne wyniki referendów w Szwajcarii" : "Historyczne wyniki referendów w Unii Europejskiej")}</span>
+                <span className="text-center">{showExternalComparison ? "Ukryj historię ze Szwajcarii" : (scope === 'local' ? "Historyczne wyniki referendów w Szwajcarii" : "Historyczne wyniki referendów w Unii Europejskiej")}</span>
               </button>
             </div>
 
