@@ -54,7 +54,7 @@ const localHistoryData = [
 
 // Dane historyczne ogólnokrajowe
 const nationalHistoryData = [
-  { rok: "2023", przedmiot: "Wiek emerytalny, bariera na granicy, migracja i prywatyzacja", frekwencja: "40,91%", prog: "> 50% uprawnionych", wynik: "Niewiążące (poniżej 50%)", status: "fail" },
+  { rok: "2023", przedmiot: "Wiek emerytalny, bariera na granicy, migracja i prywatyzacja", frekwencja: "40,91%", prog: "> 50% uprawnionych", wynik: "Niewiążące", status: "fail" },
   { rok: "2015", przedmiot: "JOW, finansowanie partii i rozstrzyganie wątpliwości podatkowych", frekwencja: "7,80%", prog: "> 50% uprawnionych", wynik: "Niewiążące", status: "fail" },
   { rok: "2003", przedmiot: "Przystąpienie Polski do Unii Europejskiej", frekwencja: "58,85%", prog: "> 50% uprawnionych", wynik: "Ważne (Wiążące)", status: "success" },
   { rok: "1997", przedmiot: "Przyjęcie Konstytucji Rzeczypospolitej Polskiej", frekwencja: "42,86%", prog: "Brak (ref. konstytucyjne)", wynik: "Ważne (brak progu)", status: "success" },
@@ -740,10 +740,10 @@ export default function App() {
                         {scope === 'local' ? (
                           <>
                             <th className="px-4 py-2">Lp.</th>
-                            <th className="px-4 py-2">Miejsce przeprowadzenia</th>
+                            <th className="px-4 py-2">Miejsce</th>
                             <th className="px-4 py-2">Data</th>
                             <th className="px-4 py-2">Przedmiot referendum</th>
-                            <th className="px-4 py-2 text-right">Frekwencja [%]</th>
+                            <th className="px-4 py-2 text-right">Frekwencja</th>
                             <th className="px-4 py-2">Próg ważności</th>
                             <th className="px-4 py-2">Status / Wynik</th>
                           </>
@@ -879,7 +879,7 @@ export default function App() {
 
             {/* Stopka z Logo i Informacją o Fundacji */}
             <div className="text-xs text-gray-500 text-center pb-8 mt-6">
-              <div className="flex flex-col items-center gap-6">
+              <div className="flex flex-col items-center gap-1">
                 <div className="space-y-1">
                   <p>Aplikacja edukacyjna przygotowana przez Fundację Polskiego Rozwoju 🇵🇱. Dane szacunkowe na 2025.</p>
                 </div>
