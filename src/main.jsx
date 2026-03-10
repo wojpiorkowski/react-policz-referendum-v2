@@ -889,6 +889,8 @@ export default function App() {
                       alt="Fundacja Polskiego Rozwoju" 
                       className="h-48 w-auto opacity-90 hover:opacity-100 transition-opacity" 
                     />
+                    <br />
+                    <a href="https://fundacjapro.org" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-red-600 underline decoration-gray-300 hover:decoration-red-500 transition-colors">
                 </div>
               </div>
             </div>
