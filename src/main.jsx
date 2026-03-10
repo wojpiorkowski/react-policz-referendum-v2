@@ -140,55 +140,6 @@ const EUFlagIcon = ({ className }) => (
   </svg>
 );
 
-// Komponent Logo FPR - Wersja poprawna składniowo, wiernie odwzorowująca logo
-const FPRLogo = ({ className }) => (
-  <div className={`flex items-center justify-center ${className}`} style={{ width: '280px' }}>
-    <svg viewBox="0 0 750 320" className="w-full h-auto drop-shadow-sm">
-      <defs>
-        <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#C62127" stopOpacity="0" />
-          <stop offset="30%" stopColor="#C62127" stopOpacity="0.8" />
-          <stop offset="100%" stopColor="#C62127" stopOpacity="1" />
-        </linearGradient>
-        <linearGradient id="lineGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#C62127" stopOpacity="0" />
-          <stop offset="50%" stopColor="#C62127" stopOpacity="1" />
-        </linearGradient>
-        <style>
-          {`
-            .fpr-text-small { font-family: 'Segoe UI', Arial, sans-serif; font-weight: 300; fill: #828282; font-size: 42px; letter-spacing: 2px; }
-            .fpr-text-large { font-family: 'Arial Black', Impact, sans-serif; font-weight: 900; fill: #C62127; font-size: 96px; letter-spacing: -2px; }
-          `}
-        </style>
-      </defs>
-
-      {/* Teksty */}
-      <text x="20" y="100" className="fpr-text-small">FUNDACJA</text>
-      <text x="15" y="195" className="fpr-text-large">POLSKIEGO</text>
-      <text x="15" y="285" className="fpr-text-large">ROZWOJU</text>
-
-      {/* Dolne zakrzywione linie (swoosh) */}
-      <path d="M 120 315 C 300 290, 450 250, 600 180" stroke="#C62127" strokeWidth="2.5" fill="none" strokeLinecap="round" opacity="0.8" />
-      <path d="M 180 325 C 350 300, 480 260, 620 190" stroke="#C62127" strokeWidth="1" fill="none" strokeLinecap="round" opacity="0.4" />
-
-      {/* Dynamiczne paski ze strzałkami lecące w górę w prawo */}
-      <path d="M 480 140 L 640 40" stroke="url(#lineGrad)" strokeWidth="3" fill="none" />
-      <polygon points="635,45 648,35 632,32" fill="#C62127" />
-
-      <path d="M 500 150 L 620 75" stroke="url(#lineGrad)" strokeWidth="3" fill="none" />
-      <polygon points="615,80 628,70 612,67" fill="#C62127" />
-
-      <path d="M 460 160 L 530 110" stroke="url(#lineGrad)" strokeWidth="2" fill="none" />
-      <path d="M 440 170 L 490 135" stroke="url(#lineGrad)" strokeWidth="1.5" fill="none" />
-
-      {/* Czerwone aerodynamiczne skrzydła z gradientem po lewej (przezroczystość) */}
-      <polygon points="400,240 630,140 590,185" fill="url(#redGrad)" />
-      <polygon points="420,260 620,180 580,215" fill="url(#redGrad)" />
-
-    </svg>
-  </div>
-);
-
 export default function App() {
   const [currentView, setCurrentView] = useState('calculator'); // 'calculator' | 'postulates'
   const [scope, setScope] = useState('local'); // 'local' | 'national'
@@ -930,7 +881,7 @@ export default function App() {
                 </div>
                 <div className="mt-6 flex justify-center">
   <img 
-    src="/logo_FPR.svg" 
+    src="./logo_FPR.svg" 
     alt="Fundacja Polskiego Rozwoju" 
     className="h-20 w-auto opacity-90 hover:opacity-100 transition-opacity" 
   />
