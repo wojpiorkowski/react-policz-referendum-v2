@@ -877,25 +877,25 @@ export default function App() {
               </div>
             </div>
 
-            {/* Stopka z Logo i Informacją o Fundacji */}
+           {/* Stopka z Logo i Informacją o Fundacji */}
             <div className="text-xs text-gray-500 text-center pb-8 mt-6">
               <div className="flex flex-col items-center gap-2">
                 <div className="space-y-1">
-                  <p>Aplikacja edukacyjna przygotowana przez Fundację Polskiego Rozwoju 🇵🇱. Dane szacunkowe na 2025.</p>
+                  <p>Aplikacja edukacyjna przygotowana przez Fundację Polskiego Rozwoju 🇵🇱. Dane szacunkowe na 2026.</p>
                 </div>
                 <div className="mt-6 flex justify-center">
-  <img 
-    src="./logo_FPR.svg" 
-    alt="Fundacja Polskiego Rozwoju" 
-    className="h-48 w-auto opacity-90 hover:opacity-100 transition-opacity" 
-  />
-</div>
+                  <img 
+                    src="./logo_FPR.svg" 
+                    alt="Fundacja Polskiego Rozwoju" 
+                    className="h-48 w-auto opacity-90 hover:opacity-100 transition-opacity" 
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        )}
-      </main>
-    </div>
+          </div> // To zamyka div "space-y-6" z początku bloku else (widok kalkulatora)
+        )} 
+      </main> // To zamyka znacznik <main>
+    </div> // To zamyka główny div aplikacji
   );
 }
 
