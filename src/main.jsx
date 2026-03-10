@@ -31,30 +31,30 @@ const citiesData = {
 // Dane historyczne lokalne w Polsce
 const localHistoryData = [
   { lp: 1, miejsce: "Gmina Kosakowo", data: "04.01.2026", przedmiot: "Odwołanie wójta (E. Wendt)", frekwencja: "27,28%", prog: "3/5 uczestników wyborów", wynik: "Nieważne (zbyt niska frekwencja)", status: "fail" },
-  { lp: 2, miejsce: "Miasto Cieszyn", data: "07.12.2025", przedmiot: "Odwołanie burmistrz (G. Staszkiewicz)", frekwencja: "~18,60%", prog: "3/5 uczestników wyborów", wynik: "Nieważne (zbyt niska frekwencja)", status: "fail" },
-  { lp: 3, miejsce: "Miasto Cieszyn", data: "07.12.2025", przedmiot: "Odwołanie rady miejskiej", frekwencja: "~18,60%", prog: "3/5 uczestników wyborów", wynik: "Nieważne (zbyt niska frekwencja)", status: "fail" },
+  { lp: 2, miejsce: "Miasto Cieszyn", data: "07.12.2025", przedmiot: "Odwołanie burmistrz (G. Staszkiewicz)", frekwencja: "18,60%", prog: "3/5 uczestników wyborów", wynik: "Nieważne (zbyt niska frekwencja)", status: "fail" },
+  { lp: 3, miejsce: "Miasto Cieszyn", data: "07.12.2025", przedmiot: "Odwołanie rady miejskiej", frekwencja: "18,60%", prog: "3/5 uczestników wyborów", wynik: "Nieważne (zbyt niska frekwencja)", status: "fail" },
   { lp: 4, miejsce: "Gmina Jeleśnia", data: "07.12.2025", przedmiot: "Odwołanie wójt (A. Wasilewskiej)", frekwencja: "14,20%", prog: "3/5 uczestników wyborów", wynik: "Nieważne (zbyt niska frekwencja)", status: "fail" },
   { lp: 5, miejsce: "Gmina Barciany", data: "07.12.2025", przedmiot: "Odwołanie wójt (M. Kamińskiej)", frekwencja: "19,35%", prog: "3/5 uczestników wyborów", wynik: "Nieważne (zbyt niska frekwencja)", status: "fail" },
-  { lp: 6, miejsce: "Gmina Malechowo", data: "26.10.2025", przedmiot: "Odwołanie rady gminy", frekwencja: "~15,00%", prog: "3/5 uczestników wyborów", wynik: "Nieważne (zbyt niska frekwencja)", status: "fail" },
-  { lp: 7, miejsce: "Miasto Zabrze", data: "11.05.2025", przedmiot: "Odwołanie prezydent (A. Rupniewskiej)", frekwencja: "~25,00%", prog: "3/5 uczestników wyborów", wynik: "Ważne / Odwołano prezydenta", status: "success" },
-  { lp: 8, miejsce: "Miasto Zabrze", data: "11.05.2025", przedmiot: "Odwołanie rady miasta", frekwencja: "24,80%", prog: "3/5 uczestników wyborów", wynik: "Nieważne (brakło ok. 500 głosów)", status: "fail" },
+  { lp: 6, miejsce: "Gmina Malechowo", data: "26.10.2025", przedmiot: "Odwołanie rady gminy", frekwencja: "15,00%", prog: "3/5 uczestników wyborów", wynik: "Nieważne (zbyt niska frekwencja)", status: "fail" },
+  { lp: 7, miejsce: "Miasto Zabrze", data: "11.05.2025", przedmiot: "Odwołanie prezydent (A. Rupniewskiej)", frekwencja: "25,00%", prog: "3/5 uczestników wyborów", wynik: "Ważne / Odwołano prezydenta", status: "success" },
+  { lp: 8, miejsce: "Miasto Zabrze", data: "11.05.2025", przedmiot: "Odwołanie rady miasta", frekwencja: "24,80%", prog: "3/5 uczestników wyborów", wynik: "Nieważne (brakło 498 głosów)", status: "fail" },
   { lp: 9, miejsce: "Gmina Głubczyce", data: "27.04.2025", przedmiot: "Budowa elektrowni wiatrowych", frekwencja: "25,02%", prog: "30% uprawnionych", wynik: "Nieważne (większość była przeciw)", status: "fail" },
   { lp: 10, miejsce: "Podkowa Leśna", data: "01.10.2023", przedmiot: "Rewitalizacja stawu w Parku Miejskim", frekwencja: "41,35%", prog: "30% uprawnionych", wynik: "Ważne / Wynik rozstrzygający (TAK)", status: "success" },
   { lp: 11, miejsce: "Bielsko-Biała", data: "16.04.2023", przedmiot: "Budowa spalarni / Ograniczenie ruchu", frekwencja: "28,44%", prog: "30% uprawnionych", wynik: "Nieważne (zbyt niska frekwencja)", status: "fail" },
-  { lp: 12, miejsce: "Murowana Goślina", data: "02.10.2022", przedmiot: "Odwołanie burmistrza (D. Szmyyt)", frekwencja: "~34,00%", prog: "3/5 uczestników wyborów", wynik: "Ważne / Odwołano burmistrza", status: "success" },
-  { lp: 13, miejsce: "Murowana Goślina", data: "02.10.2022", przedmiot: "Odwołanie rady miejskiej", frekwencja: "~34,00%", prog: "3/5 uczestników wyborów", wynik: "Ważne / Odwołano radę", status: "success" },
-  { lp: 14, miejsce: "Nowy Sącz", data: "24.07.2022", przedmiot: "Budowa spalarni odpadów", frekwencja: "6,59%", prog: "30% uprawnionych", wynik: "Nieważne (zbyt niska frekwencja)", status: "fail" },
-  { lp: 15, miejsce: "Konstancin-Jeziorna", data: "22.05.2022", przedmiot: "Odwołanie burmistrza i rady", frekwencja: "~14,00%", prog: "3/5 uczestników wyborów", wynik: "Nieważne (zbyt niska frekwencja)", status: "fail" },
-  { lp: 16, miejsce: "Józefów nad Wisłą", data: "13.02.2022", przedmiot: "Odwołanie burmistrza", frekwencja: "~21,00%", prog: "3/5 uczestników wyborów", wynik: "Nieważne (zbyt niska frekwencja)", status: "fail" },
-  { lp: 17, miejsce: "Milanówek", data: "23.01.2022", przedmiot: "Odwołanie burmistrza (P. Remiszewskiego)", frekwencja: "~19,00%", prog: "3/5 uczestników wyborów", wynik: "Nieważne (zbyt niska frekwencja)", status: "fail" },
-  { lp: 18, miejsce: "Gmina Radłów", data: "16.01.2022", przedmiot: "Odwołanie burmistrza", frekwencja: "~16,00%", prog: "3/5 uczestników wyborów", wynik: "Nieważne (zbyt niska frekwencja)", status: "fail" },
+  { lp: 12, miejsce: "Murowana Goślina", data: "02.10.2022", przedmiot: "Odwołanie burmistrza (D. Szmyyt)", frekwencja: "34,40%", prog: "3/5 uczestników wyborów", wynik: "Ważne / Odwołano burmistrza", status: "success" },
+  { lp: 13, miejsce: "Murowana Goślina", data: "02.10.2022", przedmiot: "Odwołanie rady miejskiej", frekwencja: "34,00%", prog: "3/5 uczestników wyborów", wynik: "Ważne / Odwołano radę", status: "success" },
+  { lp: 14, miejsce: "Nowy Sącz", data: "24.07.2022", przedmiot: "Budowa spalarni odpadów", frekwencja: "7,53%", prog: "30% uprawnionych", wynik: "Nieważne (zbyt niska frekwencja)", status: "fail" },
+  { lp: 15, miejsce: "Konstancin-Jeziorna", data: "22.05.2022", przedmiot: "Odwołanie burmistrza i rady", frekwencja: "16,39%", prog: "3/5 uczestników wyborów", wynik: "Nieważne (zbyt niska frekwencja)", status: "fail" },
+  { lp: 16, miejsce: "Józefów nad Wisłą", data: "13.02.2022", przedmiot: "Odwołanie burmistrza", frekwencja: "21,80%", prog: "3/5 uczestników wyborów", wynik: "Nieważne (zbyt niska frekwencja)", status: "fail" },
+  { lp: 17, miejsce: "Milanówek", data: "23.01.2022", przedmiot: "Odwołanie burmistrza (P. Remiszewskiego)", frekwencja: "19,34%", prog: "3/5 uczestników wyborów", wynik: "Nieważne (zbyt niska frekwencja)", status: "fail" },
+  { lp: 18, miejsce: "Gmina Radłów", data: "16.01.2022", przedmiot: "Odwołanie burmistrza", frekwencja: "17,52%", prog: "3/5 uczestników wyborów", wynik: "Nieważne (zbyt niska frekwencja)", status: "fail" },
   { lp: 19, miejsce: "Sulmierzyce", data: "23.05.2021", przedmiot: "Odwołanie wójta", frekwencja: "43,42%", prog: "3/5 uczestników wyborów", wynik: "Ważne / Odwołano wójta", status: "success" },
   { lp: 20, miejsce: "Gmina Słupno", data: "23.05.2021", przedmiot: "Odwołanie wójta", frekwencja: "34,69%", prog: "3/5 uczestników wyborów", wynik: "Ważne / Odwołano wójta", status: "success" }
 ];
 
 // Dane historyczne ogólnokrajowe
 const nationalHistoryData = [
-  { rok: "2023", przedmiot: "Wiek emerytalny, bariera na granicy, migracja i prywatyzacja", frekwencja: "40,91%", prog: "> 50% uprawnionych", wynik: "Niewiążące (poniżej 50%)", status: "fail" },
+  { rok: "2023", przedmiot: "Wiek emerytalny, bariera na granicy, migracja i prywatyzacja", frekwencja: "40,91%", prog: "> 50% uprawnionych", wynik: "Niewiążące", status: "fail" },
   { rok: "2015", przedmiot: "JOW, finansowanie partii i rozstrzyganie wątpliwości podatkowych", frekwencja: "7,80%", prog: "> 50% uprawnionych", wynik: "Niewiążące", status: "fail" },
   { rok: "2003", przedmiot: "Przystąpienie Polski do Unii Europejskiej", frekwencja: "58,85%", prog: "> 50% uprawnionych", wynik: "Ważne (Wiążące)", status: "success" },
   { rok: "1997", przedmiot: "Przyjęcie Konstytucji Rzeczypospolitej Polskiej", frekwencja: "42,86%", prog: "Brak (ref. konstytucyjne)", wynik: "Ważne (brak progu)", status: "success" },
@@ -64,33 +64,33 @@ const nationalHistoryData = [
 
 // Zaktualizowane dane dla modelu szwajcarskiego na podstawie załącznika
 const swissData = [
-  { lp: 1, rok: "2025", miejsce: "Kanton Zurych", data: "30.11", przedmiot: "Ograniczenie stref \"Tempo 30\" na głównych drogach", frekwencja: "~49,9%", wynik: "Przyjęto (57,0%)", status: "success" },
-  { lp: 2, rok: "2025", miejsce: "Kanton Zurych", data: "30.11", przedmiot: "Podniesienie dopłat do składek zdrowotnych", frekwencja: "~50,0%", wynik: "Odrzucono (51,1%)", status: "fail" },
-  { lp: 3, rok: "2025", miejsce: "Miasto Zurych", data: "30.11", przedmiot: "Kredyt na infrastrukturę rowerową (350 mln CHF)", frekwencja: "49,9%", wynik: "Przyjęto (55,4%)", status: "success" },
-  { lp: 4, rok: "2025", miejsce: "Kanton Lucerna", data: "30.11", przedmiot: "Inicjatywa \"Bezpłatne i dostępne przedszkola\"", frekwencja: "48,6%", wynik: "Odrzucono (77,5%)", status: "fail" },
-  { lp: 5, rok: "2025", miejsce: "Kanton Lucerna", data: "30.11", przedmiot: "Kontrpropozycja rządu ws. opieki nad dziećmi", frekwencja: "48,6%", wynik: "Przyjęto (57,2%)", status: "success" },
-  { lp: 6, rok: "2025", miejsce: "Kanton Szafuza", data: "30.11", przedmiot: "Nowelizacja ustawy o szpitalach kantonalnych", frekwencja: "~43,0%", wynik: "Przyjęto (90,1%)", status: "success" },
-  { lp: 7, rok: "2025", miejsce: "Kanton Vaud", data: "30.11", przedmiot: "Rozszerzenie praw wyborczych dla obcokrajowców", frekwencja: "~43,0%", wynik: "Odrzucono (64,8%)", status: "fail" },
-  { lp: 8, rok: "2025", miejsce: "Appenzell Ausserrhoden", data: "30.11", przedmiot: "Przyjęcie nowej Konstytucji Kantonalnej", frekwencja: "~43,0%", wynik: "Przyjęto (77,8%)", status: "success" },
-  { lp: 9, rok: "2025", miejsce: "Bazylea-Miasto", data: "28.09", przedmiot: "Inicjatywa \"Razem w Europie\" (relacje z UE)", frekwencja: "~49,0%", wynik: "Przyjęto (64,5%)", status: "success" },
-  { lp: 10, rok: "2025", miejsce: "Kanton Fryburg", data: "28.09", przedmiot: "Kredyt na rozbudowę więzienia Bellechasse", frekwencja: "~49,0%", wynik: "Przyjęto (67,8%)", status: "success" },
-  { lp: 11, rok: "2025", miejsce: "Kanton Genewa", data: "28.09", przedmiot: "Ustawa o ograniczeniu liczby etatów w administracji", frekwencja: "~45,0%", wynik: "Przyjęto (54,8%)", status: "success" },
-  { lp: 12, rok: "2025", miejsce: "Kanton Genewa", data: "28.09", przedmiot: "Inicjatywa ws. wsparcia budownictwa spółdzielczego", frekwencja: "~45,0%", wynik: "Przyjęto (67,9%)", status: "success" },
-  { lp: 13, rok: "2025", miejsce: "Kanton Solura", data: "28.09", przedmiot: "Wprowadzenie bonów na opiekę nad dziećmi", frekwencja: "~46,0%", wynik: "Przyjęto (56,5%)", status: "success" },
-  { lp: 14, rok: "2025", miejsce: "Kanton Zurych", data: "18.05", przedmiot: "Obniżka podatku dochodowego dla firm", frekwencja: "~40,0%", wynik: "Odrzucono (ok. 65%)", status: "fail" },
-  { lp: 15, rok: "2025", miejsce: "Bazylea-Miasto", data: "18.05", przedmiot: "Pakiet wsparcia dla przemysłu farmaceutycznego", frekwencja: "~45,0%", wynik: "Przyjęto", status: "success" },
-  { lp: 16, rok: "2024", miejsce: "Kanton Berno", data: "22.09", przedmiot: "Przejście gminy Moutier do kantonu Jura", frekwencja: "42,6%", wynik: "Przyjęto (83,2%)", status: "success" },
-  { lp: 17, rok: "2024", miejsce: "Miasto Berno", data: "22.09", przedmiot: "Kredyt na budowę szkoły (Weissenbühl)", frekwencja: "49,5%", wynik: "Przyjęto (86,9%)", status: "success" },
-  { lp: 18, rok: "2024", miejsce: "Miasto Berno", data: "22.09", przedmiot: "Modernizacja przestrzeni ulicznej (Brunnhof)", frekwencja: "49,5%", wynik: "Przyjęto (76,1%)", status: "success" },
-  { lp: 19, rok: "2024", miejsce: "Miasto Berno", data: "03.03", przedmiot: "Budowa nowego centrum logistycznego (Werkhof)", frekwencja: "61,4%", wynik: "Przyjęto (82,2%)", status: "success" },
-  { lp: 20, rok: "2024", miejsce: "Miasto Berno", data: "03.03", przedmiot: "Remont kompleksu basenowego Ka-We-De", frekwencja: "61,4%", wynik: "Przyjęto (83,0%)", status: "success" }
+  { lp: 1, rok: "2025", miejsce: "Kanton Zurych", data: "30.11.2025", przedmiot: "Ograniczenie stref \"Tempo 30\" na głównych drogach", frekwencja: "49,9%", wynik: "Przyjęto (57,0%)", status: "success" },
+  { lp: 2, rok: "2025", miejsce: "Kanton Zurych", data: "30.11.2025", przedmiot: "Podniesienie dopłat do składek zdrowotnych", frekwencja: "49,9%", wynik: "Odrzucono (51,1%)", status: "fail" },
+  { lp: 3, rok: "2025", miejsce: "Miasto Zurych", data: "30.11.2025", przedmiot: "Kredyt na infrastrukturę rowerową (350 mln CHF)", frekwencja: "49,9%", wynik: "Przyjęto (55,4%)", status: "success" },
+  { lp: 4, rok: "2025", miejsce: "Kanton Lucerna", data: "30.11.2025", przedmiot: "Inicjatywa \"Bezpłatne i dostępne przedszkola\"", frekwencja: "48,6%", wynik: "Odrzucono (77,5%)", status: "fail" },
+  { lp: 5, rok: "2025", miejsce: "Kanton Lucerna", data: "30.11.2025", przedmiot: "Kontrpropozycja rządu ws. opieki nad dziećmi", frekwencja: "48,6%", wynik: "Przyjęto (57,2%)", status: "success" },
+  { lp: 6, rok: "2025", miejsce: "Kanton Szafuza", data: "30.11.2025", przedmiot: "Nowelizacja ustawy o szpitalach kantonalnych", frekwencja: "43,0%", wynik: "Przyjęto (90,1%)", status: "success" },
+  { lp: 7, rok: "2025", miejsce: "Kanton Vaud", data: "30.11.2025", przedmiot: "Rozszerzenie praw wyborczych dla obcokrajowców", frekwencja: "43,0%", wynik: "Odrzucono (64,8%)", status: "fail" },
+  { lp: 8, rok: "2025", miejsce: "Appenzell Ausserrhoden", data: "30.11.2025", przedmiot: "Przyjęcie nowej Konstytucji Kantonalnej", frekwencja: "43,0%", wynik: "Przyjęto (77,8%)", status: "success" },
+  { lp: 9, rok: "2025", miejsce: "Bazylea-Miasto", data: "28.09.2025", przedmiot: "Inicjatywa \"Razem w Europie\" (relacje z UE)", frekwencja: "49,0%", wynik: "Przyjęto (64,5%)", status: "success" },
+  { lp: 10, rok: "2025", miejsce: "Kanton Fryburg", data: "28.09.2025", przedmiot: "Kredyt na rozbudowę więzienia Bellechasse", frekwencja: "49,0%", wynik: "Przyjęto (67,8%)", status: "success" },
+  { lp: 11, rok: "2025", miejsce: "Kanton Genewa", data: "28.09.2025", przedmiot: "Ustawa o ograniczeniu liczby etatów w administracji", frekwencja: "45,0%", wynik: "Przyjęto (54,8%)", status: "success" },
+  { lp: 12, rok: "2025", miejsce: "Kanton Genewa", data: "28.09.2025", przedmiot: "Inicjatywa ws. wsparcia budownictwa spółdzielczego", frekwencja: "45,2%", wynik: "Przyjęto (60,4%)", status: "success" },
+  { lp: 13, rok: "2025", miejsce: "Kanton Solura", data: "28.09.2025", przedmiot: "Wprowadzenie bonów na opiekę nad dziećmi", frekwencja: "46,1%", wynik: "Przyjęto (56,5%)", status: "fail" },
+  { lp: 14, rok: "2025", miejsce: "Kanton Zurych", data: "18.05.2025", przedmiot: "Obniżka podatku dochodowego dla firm", frekwencja: "40,0%", wynik: "Odrzucono (65,3%)", status: "fail" },
+  { lp: 15, rok: "2025", miejsce: "Bazylea-Miasto", data: "18.05.2025", przedmiot: "Pakiet wsparcia dla przemysłu farmaceutycznego", frekwencja: "46,8%", wynik: "Przyjęto", status: "success" },
+  { lp: 16, rok: "2024", miejsce: "Kanton Berno", data: "22.09.2024", przedmiot: "Przejście gminy Moutier do kantonu Jura", frekwencja: "42,6%", wynik: "Przyjęto (83,2%)", status: "success" },
+  { lp: 17, rok: "2024", miejsce: "Miasto Berno", data: "22.09.2024", przedmiot: "Kredyt na budowę szkoły (Weissenbühl)", frekwencja: "49,5%", wynik: "Przyjęto (86,9%)", status: "success" },
+  { lp: 18, rok: "2024", miejsce: "Miasto Berno", data: "22.09.2024", przedmiot: "Modernizacja przestrzeni ulicznej (Brunnhof)", frekwencja: "49,5%", wynik: "Przyjęto (76,1%)", status: "success" },
+  { lp: 19, rok: "2024", miejsce: "Miasto Berno", data: "03.03.2024", przedmiot: "Budowa nowego centrum logistycznego (Werkhof)", frekwencja: "61,4%", wynik: "Przyjęto (82,2%)", status: "success" },
+  { lp: 20, rok: "2024", miejsce: "Miasto Berno", data: "03.03.2024", przedmiot: "Remont kompleksu basenowego Ka-We-De", frekwencja: "61,4%", wynik: "Przyjęto (83,0%)", status: "success" }
 ];
 
 // Dane dla standardów demokratycznych Unii Europejskiej
 const euData = [
   { lp: 1, miejsce: "Słowenia", data: "23.11.2025", przedmiot: "Ustawa o eutanazji (wspomaganym samobójstwie)", frekwencja: "40,15%", prog: "20% uprawnionych na NIE", wynik: "Odrzucono (53,4% przeciw)", status: "fail" },
-  { lp: 2, miejsce: "Włochy", data: "08.06.2025", przedmiot: "Liberalizacja prawa do obywatelstwa", frekwencja: "~29,5%", prog: "50% + 1 frekwencji", wynik: "Nieważne (brak kworum)", status: "fail" },
-  { lp: 3, miejsce: "Włochy", data: "08.06.2025", przedmiot: "Prawo pracy (ograniczenie umów terminowych)", frekwencja: "~29,5%", prog: "50% + 1 frekwencji", wynik: "Nieważne (brak kworum)", status: "fail" },
+  { lp: 2, miejsce: "Włochy", data: "08.06.2025", przedmiot: "Liberalizacja prawa do obywatelstwa", frekwencja: "30,60%", prog: "50% + 1 frekwencji", wynik: "Nieważne (brak kworum)", status: "fail" },
+  { lp: 3, miejsce: "Włochy", data: "08.06.2025", przedmiot: "Prawo pracy (ograniczenie umów terminowych)", frekwencja: "30,60%", prog: "50% + 1 frekwencji", wynik: "Nieważne (brak kworum)", status: "fail" },
   { lp: 4, miejsce: "Słowenia", data: "09.06.2024", przedmiot: "Wspomagane umieranie (konsultacyjne)", frekwencja: "41,40%", prog: "Brak progu", wynik: "Przyjęto (54,9% za)", status: "success" },
   { lp: 5, miejsce: "Słowenia", data: "09.06.2024", przedmiot: "Uprawa konopi do celów medycznych", frekwencja: "41,30%", prog: "Brak progu", wynik: "Przyjęto (66,7% za)", status: "success" },
   { lp: 6, miejsce: "Słowenia", data: "09.06.2024", przedmiot: "Uprawa konopi na użytek własny", frekwencja: "41,30%", prog: "Brak progu", wynik: "Przyjęto (51,5% za)", status: "success" },
@@ -99,9 +99,9 @@ const euData = [
   { lp: 9, miejsce: "Irlandia", data: "08.03.2024", przedmiot: "Zmiana definicji rodziny w Konstytucji", frekwencja: "44,40%", prog: "Brak progu", wynik: "Odrzucono (67,7% przeciw)", status: "fail" },
   { lp: 10, miejsce: "Irlandia", data: "08.03.2024", przedmiot: "Usunięcie zapisu o roli kobiet w domu", frekwencja: "44,40%", prog: "Brak progu", wynik: "Odrzucono (73,9% przeciw)", status: "fail" },
   { lp: 11, miejsce: "Słowacja", data: "21.01.2023", przedmiot: "Zmiana Konstytucji (skrócenie kadencji Sejmu)", frekwencja: "27,25%", prog: "50% + 1 frekwencji", wynik: "Nieważne (brak kworum)", status: "fail" },
-  { lp: 12, miejsce: "Słowenia", data: "27.11.2022", przedmiot: "Ustawa o publicznym nadawcy RTV", frekwencja: "41,30%", prog: "20% uprawnionych na NIE", wynik: "Przyjęto (62,8% za)", status: "success" },
-  { lp: 13, miejsce: "Słowenia", data: "27.11.2022", przedmiot: "Ustawa o opiece długoterminowej", frekwencja: "41,30%", prog: "20% uprawnionych na NIE", wynik: "Przyjęto (62,2% za)", status: "success" },
-  { lp: 14, miejsce: "Słowenia", data: "27.11.2022", przedmiot: "Ustawa o reorganizacji rządu", frekwencja: "41,30%", prog: "20% uprawnionych na NIE", wynik: "Przyjęto (56,7% za)", status: "success" },
+  { lp: 12, miejsce: "Słowenia", data: "27.11.2022", przedmiot: "Ustawa o publicznym nadawcy RTV", frekwencja: "41,85%", prog: "20% uprawnionych na NIE", wynik: "Przyjęto (62,8% za)", status: "success" },
+  { lp: 13, miejsce: "Słowenia", data: "27.11.2022", przedmiot: "Ustawa o opiece długoterminowej", frekwencja: "41,85%", prog: "20% uprawnionych na NIE", wynik: "Przyjęto (62,2% za)", status: "success" },
+  { lp: 14, miejsce: "Słowenia", data: "27.11.2022", przedmiot: "Ustawa o reorganizacji rządu", frekwencja: "41,85%", prog: "20% uprawnionych na NIE", wynik: "Przyjęto (56,7% za)", status: "success" },
   { lp: 15, miejsce: "Włochy", data: "12.06.2022", przedmiot: "Ograniczenie stosowania aresztu tymczasowego", frekwencja: "20,90%", prog: "50% + 1 frekwencji", wynik: "Nieważne (brak kworum)", status: "fail" },
   { lp: 16, miejsce: "Włochy", data: "12.06.2022", przedmiot: "Oddzielenie funkcji sędziego i prokuratora", frekwencja: "20,90%", prog: "50% + 1 frekwencji", wynik: "Nieważne (brak kworum)", status: "fail" },
   { lp: 17, miejsce: "Dania", data: "01.06.2022", przedmiot: "Zniesienie klauzuli opt-out w obronności UE", frekwencja: "65,80%", prog: "30% uprawnionych na NIE", wynik: "Przyjęto (66,9% za)", status: "success" },
@@ -740,10 +740,10 @@ export default function App() {
                         {scope === 'local' ? (
                           <>
                             <th className="px-4 py-2">Lp.</th>
-                            <th className="px-4 py-2">Miejsce przeprowadzenia</th>
+                            <th className="px-4 py-2">Miejsce</th>
                             <th className="px-4 py-2">Data</th>
                             <th className="px-4 py-2">Przedmiot referendum</th>
-                            <th className="px-4 py-2 text-right">Frekwencja [%]</th>
+                            <th className="px-4 py-2 text-right">Frekwencja</th>
                             <th className="px-4 py-2">Próg ważności</th>
                             <th className="px-4 py-2">Status / Wynik</th>
                           </>
