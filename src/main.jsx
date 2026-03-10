@@ -89,8 +89,8 @@ const swissData = [
 // Dane dla standardów demokratycznych Unii Europejskiej
 const euData = [
   { lp: 1, miejsce: "Słowenia", data: "23.11.2025", przedmiot: "Ustawa o eutanazji (wspomaganym samobójstwie)", frekwencja: "40,15%", prog: "20% uprawnionych na NIE", wynik: "Odrzucono (53,4% przeciw)", status: "fail" },
-  { lp: 2, miejsce: "Włochy", data: "08.06.2025", przedmiot: "Liberalizacja prawa do obywatelstwa", frekwencja: "~29,5%", prog: "50% + 1 frekwencji", wynik: "Nieważne (brak kworum)", status: "fail" },
-  { lp: 3, miejsce: "Włochy", data: "08.06.2025", przedmiot: "Prawo pracy (ograniczenie umów terminowych)", frekwencja: "~29,5%", prog: "50% + 1 frekwencji", wynik: "Nieważne (brak kworum)", status: "fail" },
+  { lp: 2, miejsce: "Włochy", data: "08.06.2025", przedmiot: "Liberalizacja prawa do obywatelstwa", frekwencja: "30,60%", prog: "50% + 1 frekwencji", wynik: "Nieważne (brak kworum)", status: "fail" },
+  { lp: 3, miejsce: "Włochy", data: "08.06.2025", przedmiot: "Prawo pracy (ograniczenie umów terminowych)", frekwencja: "30,60%", prog: "50% + 1 frekwencji", wynik: "Nieważne (brak kworum)", status: "fail" },
   { lp: 4, miejsce: "Słowenia", data: "09.06.2024", przedmiot: "Wspomagane umieranie (konsultacyjne)", frekwencja: "41,40%", prog: "Brak progu", wynik: "Przyjęto (54,9% za)", status: "success" },
   { lp: 5, miejsce: "Słowenia", data: "09.06.2024", przedmiot: "Uprawa konopi do celów medycznych", frekwencja: "41,30%", prog: "Brak progu", wynik: "Przyjęto (66,7% za)", status: "success" },
   { lp: 6, miejsce: "Słowenia", data: "09.06.2024", przedmiot: "Uprawa konopi na użytek własny", frekwencja: "41,30%", prog: "Brak progu", wynik: "Przyjęto (51,5% za)", status: "success" },
@@ -99,9 +99,9 @@ const euData = [
   { lp: 9, miejsce: "Irlandia", data: "08.03.2024", przedmiot: "Zmiana definicji rodziny w Konstytucji", frekwencja: "44,40%", prog: "Brak progu", wynik: "Odrzucono (67,7% przeciw)", status: "fail" },
   { lp: 10, miejsce: "Irlandia", data: "08.03.2024", przedmiot: "Usunięcie zapisu o roli kobiet w domu", frekwencja: "44,40%", prog: "Brak progu", wynik: "Odrzucono (73,9% przeciw)", status: "fail" },
   { lp: 11, miejsce: "Słowacja", data: "21.01.2023", przedmiot: "Zmiana Konstytucji (skrócenie kadencji Sejmu)", frekwencja: "27,25%", prog: "50% + 1 frekwencji", wynik: "Nieważne (brak kworum)", status: "fail" },
-  { lp: 12, miejsce: "Słowenia", data: "27.11.2022", przedmiot: "Ustawa o publicznym nadawcy RTV", frekwencja: "41,30%", prog: "20% uprawnionych na NIE", wynik: "Przyjęto (62,8% za)", status: "success" },
-  { lp: 13, miejsce: "Słowenia", data: "27.11.2022", przedmiot: "Ustawa o opiece długoterminowej", frekwencja: "41,30%", prog: "20% uprawnionych na NIE", wynik: "Przyjęto (62,2% za)", status: "success" },
-  { lp: 14, miejsce: "Słowenia", data: "27.11.2022", przedmiot: "Ustawa o reorganizacji rządu", frekwencja: "41,30%", prog: "20% uprawnionych na NIE", wynik: "Przyjęto (56,7% za)", status: "success" },
+  { lp: 12, miejsce: "Słowenia", data: "27.11.2022", przedmiot: "Ustawa o publicznym nadawcy RTV", frekwencja: "41,85%", prog: "20% uprawnionych na NIE", wynik: "Przyjęto (62,8% za)", status: "success" },
+  { lp: 13, miejsce: "Słowenia", data: "27.11.2022", przedmiot: "Ustawa o opiece długoterminowej", frekwencja: "41,85%", prog: "20% uprawnionych na NIE", wynik: "Przyjęto (62,2% za)", status: "success" },
+  { lp: 14, miejsce: "Słowenia", data: "27.11.2022", przedmiot: "Ustawa o reorganizacji rządu", frekwencja: "41,85%", prog: "20% uprawnionych na NIE", wynik: "Przyjęto (56,7% za)", status: "success" },
   { lp: 15, miejsce: "Włochy", data: "12.06.2022", przedmiot: "Ograniczenie stosowania aresztu tymczasowego", frekwencja: "20,90%", prog: "50% + 1 frekwencji", wynik: "Nieważne (brak kworum)", status: "fail" },
   { lp: 16, miejsce: "Włochy", data: "12.06.2022", przedmiot: "Oddzielenie funkcji sędziego i prokuratora", frekwencja: "20,90%", prog: "50% + 1 frekwencji", wynik: "Nieważne (brak kworum)", status: "fail" },
   { lp: 17, miejsce: "Dania", data: "01.06.2022", przedmiot: "Zniesienie klauzuli opt-out w obronności UE", frekwencja: "65,80%", prog: "30% uprawnionych na NIE", wynik: "Przyjęto (66,9% za)", status: "success" },
