@@ -307,638 +307,625 @@ export default function App() {
     </div>
   );
 
-  // WIDOK 2: NOWA PODSTRONA POSTULATÓW
-  if (currentView === 'postulates') {
-    return (
-      <div className="min-h-screen bg-gray-50 text-gray-800 font-sans animate-in fade-in duration-300">
-        <header className="bg-white border-b border-gray-100 p-4 md:p-6 sticky top-0 z-50 shadow-sm">
-          <div className="max-w-4xl mx-auto flex justify-between items-center">
-            <div className="font-extrabold text-gray-900 tracking-tight flex items-center gap-3">
-              <div className="w-8 h-5 flex flex-col rounded-sm overflow-hidden border border-gray-300 shadow-sm">
-                <div className="w-full h-1/2 bg-white"></div>
-                <div className="w-full h-1/2 bg-[#DC143C]"></div>
-              </div>
-              <span className="hidden sm:inline">Kalkulator Referendalny RP</span>
-            </div>
-            <button 
-              onClick={() => { setCurrentView('calculator'); window.scrollTo(0, 0); }}
-              className="flex items-center gap-2 text-red-600 hover:text-white hover:bg-red-600 px-5 py-2.5 rounded-full font-bold transition-all border border-red-600 shadow-sm"
-            >
-              <ArrowRight className="w-5 h-5 rotate-180" /> Wróć do kalkulatora
-            </button>
-          </div>
-        </header>
-
-        <main className="max-w-4xl mx-auto p-6 md:p-12 pb-24">
-          <div className="mb-16 text-center space-y-4">
-            <h2 className="text-4xl md:text-6xl font-black text-gray-900 uppercase tracking-tighter leading-none">
-              Postulaty zmian:<br/>
-              <span className="text-red-600">Przywróćmy głos Obywatelom!</span>
-            </h2>
-            <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed font-medium">
-              Obecny system referendalny w Polsce stawia bariery, które czynią głos Suwerena nieważnym. Naprawmy to wspólnie.
-            </p>
-          </div>
-
-          <div className="space-y-8">
-            <PostulateCard 
-              icon={Ban}
-              title="1. Likwidacja progu frekwencyjnego"
-              hash="#DecydująObecni"
-              problem="Referendum ogólnokrajowe jest wiążące tylko przy frekwencji powyżej 50%. To promuje „taktyczny bojkot” – przeciwnicy zostają w domu, by „ubić” głosowanie frekwencją."
-              postulate="Referendum powinno być wiążące bez względu na frekwencję."
-              detailLabel="Dlaczego?"
-              detailValue="Nieobecni dają milczącą zgodę tym, którzy poszli zagłosować. To jedyny sposób, by zachęcić partie do rzetelnej kampanii merytorycznej."
-            />
-
-            <PostulateCard 
-              icon={Gavel}
-              title="2. Wprowadzenie Weta Ludowego"
-              problem="Obywatele nie mają dziś narzędzia, by zatrzymać ustawę uchwaloną przez Parlament, która budzi powszechny sprzeciw społeczny."
-              postulate="Wprowadzenie instytucji weta ludowego (referendum zatwierdzającego dla ustaw)."
-              detailLabel="Jak to działa?"
-              detailValue="Jeśli obywatele w krótkim czasie (np. 180 dni) zbiorą 250 000 podpisów, nowa ustawa trafia pod ogólnokrajowe głosowanie. Jeśli Suweren powie „NIE” – ustawa trafia do kosza."
-            />
-
-            <PostulateCard 
-              icon={Zap}
-              title="3. Elektroniczne zbieranie podpisów"
-              problem="Zbieranie setek tysięcy podpisów na papierowych listach to gigantyczne wyzwanie logistyczne, na które stać tylko największe partie."
-              postulate="Umożliwienie zbierania podpisów drogą elektroniczną (Profil Zaufany / mObywatel)."
-              detailLabel="Dlaczego?"
-              detailValue="To radykalnie obniża koszt „wejścia” do polityki dla oddolnych ruchów obywatelskich i organizacji społecznych."
-            />
-
-            <PostulateCard 
-              icon={BookOpen}
-              title="4. Obowiązkowa Broszura Referendalna"
-              problem="Przed referendami obywatele często poddawani są manipulacjom medialnym, nie znając obiektywnych szczegółów propozycji."
-              postulate="Każdy obywatel powinien otrzymać neutralną broszurę informacyjną do skrzynki pocztowej."
-              detailLabel="Co w środku?"
-              detailValue="Jasny opis zmian oraz argumenty stron „ZA” i „PRZECIW”, przygotowane przez inicjatorów i oponentów w równym wymiarze miejsca."
-            />
-
-            <PostulateCard 
-              icon={MapPin}
-              title="5. Naprawa Referendów Lokalnych"
-              problem="W samorządach progi są jeszcze bardziej restrykcyjne (np. próg 3/5 w referendach odwoławczych), co paraliżuje kontrolę nad władzą."
-              postulate="Uproszczenie procedur lokalnych i obniżenie progów ważności głosowań."
-              detailLabel="Cel"
-              detailValue="Władza lokalna musi czuć stałą odpowiedzialność przed mieszkańcami, nie tylko raz na 5 lat podczas wyborów."
-            />
-          </div>
-
-          {/* Zmodyfikowany kafelek na bardziej pozytywny */}
-          <div className="mt-16 p-8 bg-gradient-to-br from-red-50 to-white rounded-3xl text-gray-900 relative overflow-hidden shadow-xl border border-red-100">
-            <div className="relative z-10 space-y-4 text-center md:text-left">
-              <h3 className="text-2xl font-black uppercase text-red-600 tracking-tight flex items-center justify-center md:justify-start gap-3">
-                <ShieldCheck className="w-8 h-8 text-red-500" /> Dlaczego to ważne?
-              </h3>
-              <p className="text-lg text-gray-700 leading-relaxed italic font-medium">
-                „Referendum to nie jest wojna, to rozmowa o wspólnej przyszłości”. Obecne prawo czyni tę rozmowę niezwykle trudną. Demokracja nie może kończyć się przy urnie wyborczej raz na kilka lat.
-              </p>
-            </div>
-            {/* Ozdobne elementy tła dla "pozytywnego" efektu */}
-            <div className="absolute -top-12 -right-12 w-48 h-48 bg-red-500 opacity-5 rounded-full"></div>
-            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-red-500 opacity-5 rounded-full"></div>
-          </div>
-
-          <div className="mt-16 pt-12 border-t border-gray-200 text-center">
-            <h3 className="text-3xl font-black text-gray-900 mb-8 tracking-tight uppercase">Materiały do pobrania</h3>
-            <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-              <a href="#" className="flex items-center justify-between bg-white border-2 border-gray-900 hover:bg-gray-900 hover:text-white p-6 rounded-2xl transition-all duration-300 font-bold text-lg group shadow-lg">
-                <span className="text-left">Demokracja w pigułce</span>
-                <Download className="w-6 h-6 group-hover:translate-y-1 transition-transform" />
-              </a>
-              <a href="#" className="flex items-center justify-between bg-red-600 hover:bg-red-700 text-white p-6 rounded-2xl transition-all duration-300 font-bold text-lg group shadow-lg shadow-red-200">
-                <span className="text-left">Wizja i Postulaty</span>
-                <Download className="w-6 h-6 group-hover:translate-y-1 transition-transform" />
-              </a>
-            </div>
-          </div>
-
-          {/* Logo Fundacji na podstronie */}
-          <div className="mt-24 pt-12 border-t border-gray-100 flex flex-col items-center">
-            <p className="text-xs text-gray-400 font-bold mb-8 uppercase tracking-widest">Inicjatywa wspierana przez</p>
-            <div className="opacity-90 hover:opacity-100 transition-opacity">
-              <FPRLogo />
-            </div>
-          </div>
-        </main>
-      </div>
-    );
-  }
-
-  // WIDOK 1: GŁÓWNY KALKULATOR
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800 font-sans pb-12 animate-in fade-in duration-500">
-      {/* Header - Białe tło, powiększona flaga (statyczna) */}
-      <header className="bg-white text-gray-900 p-8 md:p-12 shadow-sm border-b border-gray-100 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center justify-center text-center gap-6">
-          <div className="w-24 h-16 flex flex-col rounded-xl shadow-lg overflow-hidden border border-gray-200 ring-8 ring-gray-50">
-            <div className="w-full h-1/2 bg-white"></div>
-            <div className="w-full h-1/2 bg-[#DC143C]"></div>
+      {/* GLOBALNY NAGŁÓWEK I NAWIGACJA (Branding) */}
+      <header className="bg-white text-gray-900 pt-8 shadow-sm border-b border-gray-200 relative overflow-hidden z-10">
+        <div className="max-w-5xl mx-auto flex flex-col items-center justify-center text-center gap-6 px-4">
+          
+          {/* Logo Fundacji na samej górze */}
+          <div className="w-full flex justify-center mb-2">
+            <FPRLogo className="scale-[0.85] md:scale-100 origin-top transform" />
           </div>
           
+          {/* Nowy Tytuł i Lead */}
           <div>
-            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-3">
-              Kalkulator Referendalny RP
+            <h1 className="text-3xl md:text-5xl font-black tracking-tight text-gray-900 mb-4 uppercase">
+              POLICZ REFERENDUM.<br className="hidden md:block"/>
+              <span className="text-red-600"> Przywróćmy głos obywatelom!</span>
             </h1>
-            <p className="text-gray-500 text-base md:text-lg font-medium max-w-2xl mx-auto leading-relaxed">
-              Sprawdź, dlaczego w Polsce obywatele rzadko mają decydujący głos, a system faworyzuje bierność.
+            <p className="text-gray-600 text-base md:text-lg font-medium max-w-2xl mx-auto leading-relaxed">
+              Postulujemy 4 zmiany do systemu referendalnego w Polsce. Naprawmy wspólnie naszą demokrację!
             </p>
           </div>
+        </div>
+
+        {/* Utworzenie przejrzystego menu */}
+        <div className="max-w-5xl mx-auto mt-8 px-4 flex justify-center">
+          <nav className="flex flex-col md:flex-row items-end gap-2 md:gap-4 border-b border-gray-200 w-full justify-center">
+            <button 
+              className={`pb-3 px-4 md:px-6 font-bold text-sm md:text-base border-b-4 transition-colors ${currentView === 'calculator' && scope === 'local' ? 'border-red-600 text-red-600' : 'border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-300'}`}
+              onClick={() => { setCurrentView('calculator'); setScope('local'); window.scrollTo(0,0); }}
+            >
+              Referendum Lokalne
+            </button>
+            <button 
+              className={`pb-3 px-4 md:px-6 font-bold text-sm md:text-base border-b-4 transition-colors ${currentView === 'calculator' && scope === 'national' ? 'border-red-600 text-red-600' : 'border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-300'}`}
+              onClick={() => { setCurrentView('calculator'); setScope('national'); window.scrollTo(0,0); }}
+            >
+              Referendum Ogólnokrajowe
+            </button>
+            {/* Link do "Postulatów zmian" wyciągnięty na samą górę jako kluczowy element */}
+            <button 
+              className={`px-6 py-3 md:mb-0 mb-2 font-black text-sm md:text-base rounded-t-xl transition-all flex items-center justify-center gap-2 ${currentView === 'postulates' ? 'bg-red-600 text-white shadow-md' : 'bg-red-50 text-red-600 hover:bg-red-100 hover:text-red-700 border border-red-100 border-b-0'}`}
+              style={currentView === 'postulates' ? { transform: 'translateY(1px)' } : {}}
+              onClick={() => { setCurrentView('postulates'); window.scrollTo(0,0); }}
+            >
+              <Zap className={currentView === 'postulates' ? "w-5 h-5 text-yellow-300" : "w-5 h-5 text-red-500"} /> 
+              Postulaty zmian
+            </button>
+          </nav>
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto p-4 md:p-6 space-y-6 mt-4">
-        
-        {/* Przełącznik Trybu */}
-        <div className="flex rounded-lg overflow-hidden border border-red-200 shadow-sm bg-white">
-          <button 
-            className={`flex-1 py-3 px-4 font-semibold text-center transition-colors ${scope === 'local' ? 'bg-red-600 text-white' : 'hover:bg-red-50 text-red-700'}`}
-            onClick={() => setScope('local')}
-          >
-            Referendum Lokalne
-          </button>
-          <button 
-            className={`flex-1 py-3 px-4 font-semibold text-center transition-colors ${scope === 'national' ? 'bg-red-600 text-white' : 'hover:bg-red-50 text-red-700'}`}
-            onClick={() => setScope('national')}
-          >
-            Referendum Ogólnokrajowe
-          </button>
-        </div>
+      <main className="max-w-4xl mx-auto p-4 md:p-6 mt-4">
+        {currentView === 'postulates' ? (
+          <div className="animate-in fade-in duration-300">
+            {/* WIDOK: POSTULATY ZMIAN */}
+            <div className="space-y-8 mt-6">
+              <PostulateCard 
+                icon={Ban}
+                title="1. Likwidacja progu frekwencyjnego"
+                hash="#DecydująObecni"
+                problem="Referendum ogólnokrajowe jest wiążące tylko przy frekwencji powyżej 50%. To promuje „taktyczny bojkot” – przeciwnicy zostają w domu, by „ubić” głosowanie frekwencją."
+                postulate="Referendum powinno być wiążące bez względu na frekwencję."
+                detailLabel="Dlaczego?"
+                detailValue="Nieobecni dają milczącą zgodę tym, którzy poszli zagłosować. To jedyny sposób, by zachęcić partie do rzetelnej kampanii merytorycznej."
+              />
 
-        {/* Sekcja Konfiguracji */}
-        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-          <h2 className="text-xl font-bold mb-4 flex items-center gap-2 text-gray-800">
-            <Calculator className="w-5 h-5 text-red-600" />
-            Parametry wejściowe
-          </h2>
+              <PostulateCard 
+                icon={Gavel}
+                title="2. Wprowadzenie Weta Ludowego"
+                problem="Obywatele nie mają dziś narzędzia, by zatrzymać ustawę uchwaloną przez Parlament, która budzi powszechny sprzeciw społeczny."
+                postulate="Wprowadzenie instytucji weta ludowego (referendum zatwierdzającego dla ustaw)."
+                detailLabel="Jak to działa?"
+                detailValue="Jeśli obywatele w krótkim czasie (np. 180 dni) zbiorą 250 000 podpisów, nowa ustawa trafia pod ogólnokrajowe głosowanie. Jeśli Suweren powie „NIE” – ustawa trafia do kosza."
+              />
 
-          {scope === 'local' ? (
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Wybierz jednostkę samorządu</label>
-                  <select 
-                    className="w-full border border-gray-300 rounded-md p-2 focus:ring-red-500 focus:border-red-500"
-                    value={selectedCity}
-                    onChange={(e) => setSelectedCity(e.target.value)}
-                  >
-                    <optgroup label="20 największych miast">
-                      {Object.keys(citiesData).map(city => (
-                        <option key={city} value={city}>{city}</option>
-                      ))}
-                    </optgroup>
-                    <optgroup label="Inne">
-                      <option value="custom">Wprowadź dane ręcznie...</option>
-                    </optgroup>
-                  </select>
-                </div>
+              <PostulateCard 
+                icon={Zap}
+                title="3. Elektroniczne zbieranie podpisów"
+                problem="Zbieranie setek tysięcy podpisów na papierowych listach to gigantyczne wyzwanie logistyczne, na które stać tylko największe partie."
+                postulate="Umożliwienie zbierania podpisów drogą elektroniczną (Profil Zaufany / mObywatel)."
+                detailLabel="Dlaczego?"
+                detailValue="To radykalnie obniża koszt „wejścia” do polityki dla oddolnych ruchów obywatelskich i organizacji społecznych."
+              />
 
-                {selectedCity === 'custom' && (
-                  <div className="p-4 bg-gray-50 rounded-md border border-gray-200 space-y-3">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Liczba uprawnionych do głosowania</label>
-                      <input 
-                        type="number" min="0" 
-                        className="w-full border border-gray-300 rounded-md p-2"
-                        value={customU} onChange={(e) => setCustomU(Number(e.target.value))}
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Biorący udział w wyborze organu</label>
-                      <input 
-                        type="number" min="0" 
-                        className="w-full border border-gray-300 rounded-md p-2"
-                        value={customV} onChange={(e) => setCustomV(Number(e.target.value))}
-                      />
-                    </div>
-                  </div>
-                )}
+              <PostulateCard 
+                icon={BookOpen}
+                title="4. Obowiązkowa Broszura Referendalna"
+                problem="Przed referendami obywatele często poddawani są manipulacjom medialnym, nie znając obiektywnych szczegółów propozycji."
+                postulate="Każdy obywatel powinien otrzymać neutralną broszurę informacyjną do skrzynki pocztowej."
+                detailLabel="Co w środku?"
+                detailValue="Jasny opis zmian oraz argumenty stron „ZA” i „PRZECIW”, przygotowane przez inicjatorów i oponentów w równym wymiarze miejsca."
+              />
 
-                <div className="bg-amber-50/50 p-4 rounded-lg border border-amber-100">
-                  <div className="flex justify-between mb-1">
-                    <label className="block text-sm font-bold text-gray-800">Zebrane podpisy poparcia</label>
-                    <span className="font-bold text-red-600 text-sm">{formatNum(Number(collectedSignatures) || 0)}</span>
-                  </div>
-                  <input 
-                    type="range" min="0" max={data.u} step="1"
-                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-red-600 mb-3 mt-2"
-                    value={collectedSignatures || 0} 
-                    onChange={(e) => setCollectedSignatures(Math.min(Number(e.target.value), data.u))}
-                  />
-                  <input 
-                    type="number" min="0" max={data.u}
-                    className="w-full border border-gray-300 rounded-md p-2 focus:ring-red-500 focus:border-red-500"
-                    value={collectedSignatures} 
-                    onChange={(e) => {
-                      const val = e.target.value === '' ? '' : Number(e.target.value);
-                      setCollectedSignatures(val !== '' ? Math.min(val, data.u) : '');
-                    }}
-                    placeholder="Wpisz dokładną liczbę..."
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <label className="block text-sm font-medium text-gray-700 mb-1">Przedmiot referendum</label>
-                <div className="space-y-2">
-                  <label className="flex items-start gap-2 p-3 border rounded-md cursor-pointer hover:bg-gray-50 transition-colors">
-                    <input type="radio" name="localType" className="mt-1 text-red-600 focus:ring-red-500" 
-                      checked={localType === 'odwolawcze'} onChange={() => setLocalType('odwolawcze')} />
-                    <div>
-                      <span className="block font-medium">Odwołanie organu (np. Prezydenta)</span>
-                      <span className="text-xs text-gray-500">Próg: 3/5 głosów z poprzednich wyborów</span>
-                    </div>
-                  </label>
-                  <label className="flex items-start gap-2 p-3 border rounded-md cursor-pointer hover:bg-gray-50 transition-colors">
-                    <input type="radio" name="localType" className="mt-1 text-red-600 focus:ring-red-500" 
-                      checked={localType === 'merytoryczne'} onChange={() => setLocalType('merytoryczne')} />
-                    <div>
-                      <span className="block font-medium">Merytoryczne (istotne sprawy)</span>
-                      <span className="text-xs text-gray-500">Próg: 30% uprawnionych mieszkańców</span>
-                    </div>
-                  </label>
-                  <label className="flex items-start gap-2 p-3 border rounded-md cursor-pointer hover:bg-gray-50 transition-colors">
-                    <input type="radio" name="localType" className="mt-1 text-red-600 focus:ring-red-500" 
-                      checked={localType === 'podatki'} onChange={() => setLocalType('podatki')} />
-                    <div>
-                      <span className="block font-medium">Samoopodatkowanie mieszkańców</span>
-                      <span className="text-xs text-gray-500">Wymaga 2/3 ważnych głosów na TAK</span>
-                    </div>
-                  </label>
-                </div>
-              </div>
+              <PostulateCard 
+                icon={MapPin}
+                title="5. Naprawa Referendów Lokalnych"
+                problem="W samorządach progi są jeszcze bardziej restrykcyjne (np. próg 3/5 w referendach odwoławczych), co paraliżuje kontrolę nad władzą."
+                postulate="Uproszczenie procedur lokalnych i obniżenie progów ważności głosowań."
+                detailLabel="Cel"
+                detailValue="Władza lokalna musi czuć stałą odpowiedzialność przed mieszkańcami, nie tylko raz na 5 lat podczas wyborów."
+              />
             </div>
-          ) : (
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="space-y-4">
-                <input type="number" className="w-full border p-2 bg-gray-50 rounded-md" value={nationalU} onChange={(e) => setNationalU(Number(e.target.value))} />
-                <div className="bg-amber-50/50 p-4 rounded-lg border border-amber-100">
-                  <span className="font-bold text-red-600">{formatNum(collectedSignatures)}</span>
-                  <input type="range" min="0" max={nationalU} step="1000" className="w-full h-2 accent-red-600 mb-3" value={collectedSignatures} onChange={(e) => setCollectedSignatures(Math.min(Number(e.target.value), nationalU))} />
-                </div>
-              </div>
-              <div className="space-y-4">
-  <label className="flex items-start gap-2 p-3 border rounded-md cursor-pointer hover:bg-gray-50 transition-colors">
-    <input 
-      type="radio" 
-      className="mt-1 text-red-600 focus:ring-red-500" 
-      checked={nationalType === 'art125'} 
-      onChange={() => setNationalType('art125')} 
-    />
-    <div>
-      <span className="block font-medium text-gray-800">Sprawy o szczególnym znaczeniu (Art. 125)</span>
-      <span className="text-xs text-gray-500 font-normal">Wiążące przy frekwencji &gt; 50%</span>
-    </div>
-  </label>
-  
-  <label className="flex items-start gap-2 p-3 border rounded-md cursor-pointer hover:bg-gray-50 transition-colors">
-    <input 
-      type="radio" 
-      className="mt-1 text-red-600 focus:ring-red-500" 
-      checked={nationalType === 'art235'} 
-      onChange={() => setNationalType('art235')} 
-    />
-    <div>
-      <span className="block font-medium text-gray-800">Konstytucyjne (Art. 235)</span>
-      <span className="text-xs text-gray-500 font-normal">Zawsze wiążące, brak progu frekwencji</span>
-    </div>
-  </label>
-</div>
-            </div>
-          )}
-        </div>
 
-        {/* Sekcja Wyników Sztywnych */}
-        <div className="grid md:grid-cols-3 gap-4">
-          <div className="bg-white border border-gray-200 p-5 rounded-xl shadow-sm">
-            <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-2">Baza Wyborcza</h3>
-            <p className="text-3xl font-black text-gray-800">{formatNum(data.u)}</p>
-          </div>
-          <div className={`border p-5 rounded-xl shadow-sm transition-colors ${collectedSignatures >= data.signatures ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'}`}>
-            <h3 className={`text-sm font-bold uppercase tracking-wider mb-2 ${collectedSignatures >= data.signatures ? 'text-green-800' : 'text-red-800'}`}>Wymagane podpisy</h3>
-            <p className={`text-3xl font-black ${collectedSignatures >= data.signatures ? 'text-green-700' : 'text-red-700'}`}>{formatNum(data.signatures)}</p>
-          </div>
-          <div className="bg-white border border-gray-200 p-5 rounded-xl shadow-sm">
-            <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-2">Próg Ważności</h3>
-            <p className="text-3xl font-black text-gray-800">{data.validityThreshold === 0 ? "Brak" : formatNum(data.validityThreshold)}</p>
-            <p className="text-xs text-gray-500 mt-1">{data.validityLabel}</p>
-          </div>
-        </div>
-
-        {/* Symulator */}
-        <div className={`bg-white p-6 rounded-xl shadow-md border-t-4 transition-colors duration-300 ${collectedSignatures >= data.signatures ? 'border-t-red-600' : 'border-t-gray-400'}`}>
-          <h2 className="text-xl font-bold mb-6 flex items-center gap-2 text-gray-800">
-            <Users className={`w-5 h-5 transition-colors ${collectedSignatures >= data.signatures ? 'text-red-600' : 'text-gray-400'}`} />
-            Symulator Głosowania
-          </h2>
-          
-          {collectedSignatures < data.signatures && (
-            <div className="mb-8 bg-red-50 border border-red-200 p-5 rounded-lg text-center shadow-sm">
-              <AlertCircle className="w-8 h-8 text-red-500 mx-auto mb-2" />
-              <p className="font-bold text-red-800 text-lg">Symulacja zablokowana: Zbyt mało podpisów</p>
-              <p className="text-sm text-red-700 mt-1 max-w-2xl mx-auto">
-                W polskim systemie inicjatywa obywatelska musi najpierw uzyskać odpowiednie poparcie, aby referendum mogło się odbyć.
-              </p>
-            </div>
-          )}
-
-          <div className={`transition-all duration-300 ${collectedSignatures < data.signatures ? 'opacity-30 pointer-events-none grayscale blur-[1px]' : ''}`}>
-            <div className="grid md:grid-cols-2 gap-8 mb-6">
-              <div>
-                <div className="flex justify-between mb-2">
-                  <label className="font-semibold text-gray-700">Symulowana Frekwencja</label>
-                  <span className="font-bold text-red-600">{simTurnoutPct}%</span>
-                </div>
-                <input 
-                  type="range" min="1" max="100" step="0.1"
-                  disabled={collectedSignatures < data.signatures}
-                  value={simTurnoutPct} onChange={(e) => setSimTurnoutPct(Number(e.target.value))}
-                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-red-600 disabled:cursor-not-allowed"
-                />
-                <p className="text-sm text-gray-500 mt-3">
-                  Przewidywana liczba głosujących: <strong>{formatNum(data.simVoters)}</strong>
+            <div className="mt-16 p-8 bg-gradient-to-br from-red-50 to-white rounded-3xl text-gray-900 relative overflow-hidden shadow-xl border border-red-100">
+              <div className="relative z-10 space-y-4 text-center md:text-left">
+                <h3 className="text-2xl font-black uppercase text-red-600 tracking-tight flex items-center justify-center md:justify-start gap-3">
+                  <ShieldCheck className="w-8 h-8 text-red-500" /> Dlaczego to ważne?
+                </h3>
+                <p className="text-lg text-gray-700 leading-relaxed italic font-medium">
+                  „Referendum to nie jest wojna, to rozmowa o wspólnej przyszłości”. Obecne prawo czyni tę rozmowę niezwykle trudną. Demokracja nie może kończyć się przy urnie wyborczej raz na kilka lat.
                 </p>
               </div>
+              <div className="absolute -top-12 -right-12 w-48 h-48 bg-red-500 opacity-5 rounded-full"></div>
+              <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-red-500 opacity-5 rounded-full"></div>
+            </div>
 
-              <div>
-                <div className="flex justify-between mb-2">
-                  <label className="font-semibold text-gray-700">Głosy na "TAK"</label>
-                  <span className="font-bold text-red-600">{simSupportPct}%</span>
+            <div className="mt-16 pt-12 border-t border-gray-200 text-center">
+              <h3 className="text-3xl font-black text-gray-900 mb-8 tracking-tight uppercase">Materiały do pobrania</h3>
+              <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                <a href="#" className="flex items-center justify-between bg-white border-2 border-gray-900 hover:bg-gray-900 hover:text-white p-6 rounded-2xl transition-all duration-300 font-bold text-lg group shadow-lg">
+                  <span className="text-left">Demokracja w pigułce</span>
+                  <Download className="w-6 h-6 group-hover:translate-y-1 transition-transform" />
+                </a>
+                <a href="#" className="flex items-center justify-between bg-red-600 hover:bg-red-700 text-white p-6 rounded-2xl transition-all duration-300 font-bold text-lg group shadow-lg shadow-red-200">
+                  <span className="text-left">Wizja i Postulaty</span>
+                  <Download className="w-6 h-6 group-hover:translate-y-1 transition-transform" />
+                </a>
+              </div>
+            </div>
+            
+            <div className="mt-24 pt-12 border-t border-gray-100 flex flex-col items-center">
+              <p className="text-xs text-gray-400 font-bold mb-8 uppercase tracking-widest">Inicjatywa wspierana przez</p>
+              <div className="opacity-90 hover:opacity-100 transition-opacity">
+                <FPRLogo />
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="space-y-6 animate-in fade-in duration-300">
+            {/* WIDOK: KALKULATORY */}
+
+            {/* Sekcja Konfiguracji */}
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <h2 className="text-xl font-bold mb-4 flex items-center gap-2 text-gray-800">
+                <Calculator className="w-5 h-5 text-red-600" />
+                Parametry wejściowe
+              </h2>
+
+              {scope === 'local' ? (
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Wybierz jednostkę samorządu</label>
+                      <select 
+                        className="w-full border border-gray-300 rounded-md p-2 focus:ring-red-500 focus:border-red-500"
+                        value={selectedCity}
+                        onChange={(e) => setSelectedCity(e.target.value)}
+                      >
+                        <optgroup label="20 największych miast">
+                          {Object.keys(citiesData).map(city => (
+                            <option key={city} value={city}>{city}</option>
+                          ))}
+                        </optgroup>
+                        <optgroup label="Inne">
+                          <option value="custom">Wprowadź dane ręcznie...</option>
+                        </optgroup>
+                      </select>
+                    </div>
+
+                    {selectedCity === 'custom' && (
+                      <div className="p-4 bg-gray-50 rounded-md border border-gray-200 space-y-3">
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-1">Liczba uprawnionych do głosowania</label>
+                          <input 
+                            type="number" min="0" 
+                            className="w-full border border-gray-300 rounded-md p-2"
+                            value={customU} onChange={(e) => setCustomU(Number(e.target.value))}
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-1">Biorący udział w wyborze organu</label>
+                          <input 
+                            type="number" min="0" 
+                            className="w-full border border-gray-300 rounded-md p-2"
+                            value={customV} onChange={(e) => setCustomV(Number(e.target.value))}
+                          />
+                        </div>
+                      </div>
+                    )}
+
+                    <div className={`p-4 rounded-lg border transition-colors duration-300 ${collectedSignatures >= data.signatures ? 'bg-green-50/50 border-green-200' : 'bg-red-50/50 border-red-200'}`}>
+                      <div className="flex justify-between mb-1">
+                        <label className="block text-sm font-bold text-gray-800">Zebrane podpisy poparcia</label>
+                        <span className={`font-bold text-sm ${collectedSignatures >= data.signatures ? 'text-green-600' : 'text-red-600'}`}>{formatNum(Number(collectedSignatures) || 0)}</span>
+                      </div>
+                      <input 
+                        type="range" min="0" max={data.u} step="1"
+                        className={`w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer mb-3 mt-2 transition-colors duration-300 ${collectedSignatures >= data.signatures ? 'accent-green-600' : 'accent-red-600'}`}
+                        value={collectedSignatures || 0} 
+                        onChange={(e) => setCollectedSignatures(Math.min(Number(e.target.value), data.u))}
+                      />
+                      <input 
+                        type="number" min="0" max={data.u}
+                        className="w-full border border-gray-300 rounded-md p-2 focus:ring-red-500 focus:border-red-500"
+                        value={collectedSignatures} 
+                        onChange={(e) => {
+                          const val = e.target.value === '' ? '' : Number(e.target.value);
+                          setCollectedSignatures(val !== '' ? Math.min(val, data.u) : '');
+                        }}
+                        placeholder="Wpisz dokładną liczbę..."
+                      />
+                      <div className={`mt-4 text-center font-black uppercase text-lg tracking-wide ${collectedSignatures >= data.signatures ? 'text-green-600' : 'text-red-600'}`}>
+                        {collectedSignatures >= data.signatures ? 'ZEBRANO WYSTARCZAJĄCĄ ILOŚĆ' : 'NIE ZEBRANO WYSTARCZAJĄCEJ ILOŚCI'}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Przedmiot referendum</label>
+                    <div className="space-y-2">
+                      <label className="flex items-start gap-2 p-3 border rounded-md cursor-pointer hover:bg-gray-50 transition-colors">
+                        <input type="radio" name="localType" className="mt-1 text-red-600 focus:ring-red-500" 
+                          checked={localType === 'odwolawcze'} onChange={() => setLocalType('odwolawcze')} />
+                        <div>
+                          <span className="block font-medium">Odwołanie organu (np. Prezydenta)</span>
+                          <span className="text-xs text-gray-500">Próg: 3/5 głosów z poprzednich wyborów</span>
+                        </div>
+                      </label>
+                      <label className="flex items-start gap-2 p-3 border rounded-md cursor-pointer hover:bg-gray-50 transition-colors">
+                        <input type="radio" name="localType" className="mt-1 text-red-600 focus:ring-red-500" 
+                          checked={localType === 'merytoryczne'} onChange={() => setLocalType('merytoryczne')} />
+                        <div>
+                          <span className="block font-medium">Merytoryczne (istotne sprawy)</span>
+                          <span className="text-xs text-gray-500">Próg: 30% uprawnionych mieszkańców</span>
+                        </div>
+                      </label>
+                      <label className="flex items-start gap-2 p-3 border rounded-md cursor-pointer hover:bg-gray-50 transition-colors">
+                        <input type="radio" name="localType" className="mt-1 text-red-600 focus:ring-red-500" 
+                          checked={localType === 'podatki'} onChange={() => setLocalType('podatki')} />
+                        <div>
+                          <span className="block font-medium">Samoopodatkowanie mieszkańców</span>
+                          <span className="text-xs text-gray-500">Wymaga 2/3 ważnych głosów na TAK</span>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
                 </div>
-                <input 
-                  type="range" min="0" max="100" step="0.1"
-                  disabled={collectedSignatures < data.signatures}
-                  value={simSupportPct} onChange={(e) => setSimSupportPct(Number(e.target.value))}
-                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-red-600 disabled:cursor-not-allowed"
-                />
-                <p className="text-sm text-gray-500 mt-2">
-                  Przewidywana liczba głosów ZA: <strong>{formatNum(data.simVotesFor)}</strong>
-                </p>
+              ) : (
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <input type="number" className="w-full border p-2 bg-gray-50 rounded-md" value={nationalU} onChange={(e) => setNationalU(Number(e.target.value))} />
+                    <div className={`p-4 rounded-lg border transition-colors duration-300 ${collectedSignatures >= data.signatures ? 'bg-green-50/50 border-green-200' : 'bg-red-50/50 border-red-200'}`}>
+                      <span className={`font-bold ${collectedSignatures >= data.signatures ? 'text-green-600' : 'text-red-600'}`}>{formatNum(collectedSignatures)}</span>
+                      <input type="range" min="0" max={nationalU} step="1000" className={`w-full h-2 mb-3 transition-colors duration-300 ${collectedSignatures >= data.signatures ? 'accent-green-600' : 'accent-red-600'}`} value={collectedSignatures} onChange={(e) => setCollectedSignatures(Math.min(Number(e.target.value), nationalU))} />
+                      <div className={`mt-3 text-center font-black uppercase text-lg tracking-wide ${collectedSignatures >= data.signatures ? 'text-green-600' : 'text-red-600'}`}>
+                        {collectedSignatures >= data.signatures ? 'ZEBRANO WYSTARCZAJĄCĄ ILOŚĆ' : 'NIE ZEBRANO WYSTARCZAJĄCEJ ILOŚCI'}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    <label className="flex items-start gap-2 p-3 border rounded-md cursor-pointer hover:bg-gray-50 transition-colors">
+                      <input 
+                        type="radio" 
+                        className="mt-1 text-red-600 focus:ring-red-500" 
+                        checked={nationalType === 'art125'} 
+                        onChange={() => setNationalType('art125')} 
+                      />
+                      <div>
+                        <span className="block font-medium text-gray-800">Sprawy o szczególnym znaczeniu (Art. 125)</span>
+                        <span className="text-xs text-gray-500 font-normal">Wiążące przy frekwencji &gt; 50%</span>
+                      </div>
+                    </label>
+                    
+                    <label className="flex items-start gap-2 p-3 border rounded-md cursor-pointer hover:bg-gray-50 transition-colors">
+                      <input 
+                        type="radio" 
+                        className="mt-1 text-red-600 focus:ring-red-500" 
+                        checked={nationalType === 'art235'} 
+                        onChange={() => setNationalType('art235')} 
+                      />
+                      <div>
+                        <span className="block font-medium text-gray-800">Konstytucyjne (Art. 235)</span>
+                        <span className="text-xs text-gray-500 font-normal">Zawsze wiążące, brak progu frekwencji</span>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Sekcja Wyników Sztywnych */}
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className="bg-white border border-gray-200 p-5 rounded-xl shadow-sm">
+                <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-2">Baza Wyborcza</h3>
+                <p className="text-3xl font-black text-gray-800">{formatNum(data.u)}</p>
+              </div>
+              <div className={`border p-5 rounded-xl shadow-sm transition-colors ${collectedSignatures >= data.signatures ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'}`}>
+                <h3 className={`text-sm font-bold uppercase tracking-wider mb-2 ${collectedSignatures >= data.signatures ? 'text-green-800' : 'text-red-800'}`}>Wymagane podpisy</h3>
+                <p className={`text-3xl font-black ${collectedSignatures >= data.signatures ? 'text-green-700' : 'text-red-700'}`}>{formatNum(data.signatures)}</p>
+              </div>
+              <div className="bg-white border border-gray-200 p-5 rounded-xl shadow-sm">
+                <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-2">Próg Ważności</h3>
+                <p className="text-3xl font-black text-gray-800">{data.validityThreshold === 0 ? "Brak" : formatNum(data.validityThreshold)}</p>
+                <p className="text-xs text-gray-500 mt-1">{data.validityLabel}</p>
               </div>
             </div>
 
-            <div className="p-5 rounded-lg bg-gray-50 border border-gray-200">
-              <div className="flex flex-col md:flex-row justify-between items-center mb-4 gap-2">
-                <h3 className="text-lg font-bold text-center text-gray-800">Status przy powyższych parametrach:</h3>
-                
-                {/* Przełącznik: Tryb bezprogowy */}
-                <label className="flex items-center cursor-pointer bg-white px-3 py-1.5 rounded-lg border border-gray-200 shadow-sm hover:bg-gray-50 transition-colors">
-                  <div className="relative">
-                    <input 
-                      type="checkbox" 
-                      className="sr-only" 
-                      checked={noThresholdMode} 
-                      onChange={() => setNoThresholdMode(!noThresholdMode)}
-                      disabled={collectedSignatures < data.signatures}
-                    />
-                    <div className={`block w-10 h-6 rounded-full transition-colors ${noThresholdMode ? 'bg-green-500' : 'bg-gray-300'}`}></div>
-                    <div className={`dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition-transform ${noThresholdMode ? 'transform translate-x-4' : ''}`}></div>
-                  </div>
-                  <div className="ml-3 text-sm font-bold text-gray-700 flex items-center gap-1">
-                    Model bezprogowy
-                  </div>
-                </label>
-              </div>
-
-              {noThresholdMode && (
-                <div className="mb-4 bg-blue-50 border border-blue-200 p-3 rounded-lg text-sm text-blue-800 flex items-start gap-2">
-                  <Info className="w-5 h-5 flex-shrink-0 mt-0.5 text-blue-600" />
-                  <p>
-                    <strong>Model bezprogowy (czysta Demokracja Bezpośrednia):</strong> W ideologii Instytutu Demokracji Bezpośredniej referendum powinno być wiążące bez względu na frekwencję. Osoba niebiorąca udziału w głosowaniu powinna być traktowana jako akceptująca wynik wypracowany przez aktywnych obywateli.
+            {/* Symulator */}
+            <div className={`bg-white p-6 rounded-xl shadow-md border-t-4 transition-colors duration-300 ${collectedSignatures >= data.signatures ? 'border-t-red-600' : 'border-t-gray-400'}`}>
+              <h2 className="text-xl font-bold mb-6 flex items-center gap-2 text-gray-800">
+                <Users className={`w-5 h-5 transition-colors ${collectedSignatures >= data.signatures ? 'text-red-600' : 'text-gray-400'}`} />
+                Symulator Głosowania
+              </h2>
+              
+              {collectedSignatures < data.signatures && (
+                <div className="mb-8 bg-red-50 border border-red-200 p-5 rounded-lg text-center shadow-sm">
+                  <AlertCircle className="w-8 h-8 text-red-500 mx-auto mb-2" />
+                  <p className="font-bold text-red-800 text-lg">Symulacja zablokowana: Zbyt mało podpisów</p>
+                  <p className="text-sm text-red-700 mt-1 max-w-2xl mx-auto">
+                    W polskim systemie inicjatywa obywatelska musi najpierw uzyskać odpowiednie poparcie, aby referendum mogło się odbyć.
                   </p>
                 </div>
               )}
 
-              <div className="flex flex-col md:flex-row gap-4 justify-center">
-                <div className={`flex-1 p-4 rounded-lg flex items-center gap-3 border transition-colors ${data.isValid ? 'bg-green-50 border-green-200 text-green-800' : 'bg-red-50 border-red-200 text-red-800'}`}>
-                  {data.isValid ? <CheckCircle className="w-8 h-8 flex-shrink-0" /> : <AlertCircle className="w-8 h-8 flex-shrink-0" />}
+              <div className={`transition-all duration-300 ${collectedSignatures < data.signatures ? 'opacity-30 pointer-events-none grayscale blur-[1px]' : ''}`}>
+                <div className="grid md:grid-cols-2 gap-8 mb-6">
                   <div>
-                    <p className="font-bold text-lg">{data.isValid ? 'Ważne / Wiążące' : 'Nieważne / Opiniodawcze'}</p>
-                    <p className="text-sm opacity-90">
-                      {data.isValid 
-                        ? (noThresholdMode && (scope === 'local' || nationalType !== 'art235') ? "Frekwencja nie ma znaczenia (model bezprogowy)." : "Osiągnięto wymagany próg frekwencji.")
-                        : `Brakuje ${formatNum(Math.max(0, data.validityThreshold - data.simVoters))} uczestników.`}
+                    <div className="flex justify-between mb-2">
+                      <label className="font-semibold text-gray-700">Symulowana Frekwencja</label>
+                      <span className="font-bold text-red-600">{simTurnoutPct}%</span>
+                    </div>
+                    <input 
+                      type="range" min="1" max="100" step="0.1"
+                      disabled={collectedSignatures < data.signatures}
+                      value={simTurnoutPct} onChange={(e) => setSimTurnoutPct(Number(e.target.value))}
+                      className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-red-600 disabled:cursor-not-allowed"
+                    />
+                    <p className="text-sm text-gray-500 mt-3">
+                      Przewidywana liczba głosujących: <strong>{formatNum(data.simVoters)}</strong>
+                    </p>
+                  </div>
+
+                  <div>
+                    <div className="flex justify-between mb-2">
+                      <label className="font-semibold text-gray-700">Głosy na "TAK"</label>
+                      <span className="font-bold text-red-600">{simSupportPct}%</span>
+                    </div>
+                    <input 
+                      type="range" min="0" max="100" step="0.1"
+                      disabled={collectedSignatures < data.signatures}
+                      value={simSupportPct} onChange={(e) => setSimSupportPct(Number(e.target.value))}
+                      className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-red-600 disabled:cursor-not-allowed"
+                    />
+                    <p className="text-sm text-gray-500 mt-2">
+                      Przewidywana liczba głosów ZA: <strong>{formatNum(data.simVotesFor)}</strong>
                     </p>
                   </div>
                 </div>
-                <div className={`flex-1 p-4 rounded-lg flex items-center gap-3 border transition-colors ${data.isDecisive ? 'bg-green-50 border-green-200 text-green-800' : 'bg-gray-100 border-gray-300 text-gray-600'}`}>
-                  {data.isDecisive ? <CheckCircle className="w-8 h-8 flex-shrink-0" /> : <Info className="w-8 h-8 flex-shrink-0" />}
-                  <div>
-                    <p className="font-bold text-lg">{data.isDecisive ? 'Większość ZA' : 'Brak większości'}</p>
-                    <p className="text-sm opacity-90">
-                      {data.isDecisive ? "Uzyskano wymaganą większość głosów." : `Wymagane >${(data.decisionThresholdPct*100).toFixed(0)}% poparcia.`}
-                    </p>
+
+                <div className="p-5 rounded-lg bg-gray-50 border border-gray-200">
+                  <div className="flex flex-col md:flex-row justify-between items-center mb-4 gap-2">
+                    <h3 className="text-lg font-bold text-center text-gray-800">Status przy powyższych parametrach:</h3>
+                    
+                    {/* Przełącznik: Tryb bezprogowy */}
+                    <label className="flex items-center cursor-pointer bg-white px-3 py-1.5 rounded-lg border border-gray-200 shadow-sm hover:bg-gray-50 transition-colors">
+                      <div className="relative">
+                        <input 
+                          type="checkbox" 
+                          className="sr-only" 
+                          checked={noThresholdMode} 
+                          onChange={() => setNoThresholdMode(!noThresholdMode)}
+                          disabled={collectedSignatures < data.signatures}
+                        />
+                        <div className={`block w-10 h-6 rounded-full transition-colors ${noThresholdMode ? 'bg-green-500' : 'bg-gray-300'}`}></div>
+                        <div className={`dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition-transform ${noThresholdMode ? 'transform translate-x-4' : ''}`}></div>
+                      </div>
+                      <div className="ml-3 text-sm font-bold text-gray-700 flex items-center gap-1">
+                        Model bezprogowy
+                      </div>
+                    </label>
                   </div>
+
+                  {noThresholdMode && (
+                    <div className="mb-4 bg-blue-50 border border-blue-200 p-3 rounded-lg text-sm text-blue-800 flex items-start gap-2">
+                      <Info className="w-5 h-5 flex-shrink-0 mt-0.5 text-blue-600" />
+                      <p>
+                        <strong>Model bezprogowy (czysta Demokracja Bezpośrednia):</strong> W ideologii Instytutu Demokracji Bezpośredniej referendum powinno być wiążące bez względu na frekwencję. Osoba niebiorąca udziału w głosowaniu powinna być traktowana jako akceptująca wynik wypracowany przez aktywnych obywateli.
+                      </p>
+                    </div>
+                  )}
+
+                  <div className="flex flex-col md:flex-row gap-4 justify-center">
+                    <div className={`flex-1 p-4 rounded-lg flex items-center gap-3 border transition-colors ${data.isValid ? 'bg-green-50 border-green-200 text-green-800' : 'bg-red-50 border-red-200 text-red-800'}`}>
+                      {data.isValid ? <CheckCircle className="w-8 h-8 flex-shrink-0" /> : <AlertCircle className="w-8 h-8 flex-shrink-0" />}
+                      <div>
+                        <p className="font-bold text-lg">{data.isValid ? 'Ważne / Wiążące' : 'Nieważne / Opiniodawcze'}</p>
+                        <p className="text-sm opacity-90">
+                          {data.isValid 
+                            ? (noThresholdMode && (scope === 'local' || nationalType !== 'art235') ? "Frekwencja nie ma znaczenia (model bezprogowy)." : "Osiągnięto wymagany próg frekwencji.")
+                            : `Brakuje ${formatNum(Math.max(0, data.validityThreshold - data.simVoters))} uczestników.`}
+                        </p>
+                      </div>
+                    </div>
+                    <div className={`flex-1 p-4 rounded-lg flex items-center gap-3 border transition-colors ${data.isDecisive ? 'bg-green-50 border-green-200 text-green-800' : 'bg-gray-100 border-gray-300 text-gray-600'}`}>
+                      {data.isDecisive ? <CheckCircle className="w-8 h-8 flex-shrink-0" /> : <Info className="w-8 h-8 flex-shrink-0" />}
+                      <div>
+                        <p className="font-bold text-lg">{data.isDecisive ? 'Większość ZA' : 'Brak większości'}</p>
+                        <p className="text-sm opacity-90">
+                          {data.isDecisive ? "Uzyskano wymaganą większość głosów." : `Wymagane >${(data.decisionThresholdPct*100).toFixed(0)}% poparcia.`}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Informacja o SUKCESIE (wynik pozytywny) */}
+                  {(data.isValid && data.isDecisive) && (
+                    <div className="mt-6 bg-green-600 text-white p-4 rounded-lg text-center font-bold shadow-lg flex items-center justify-center gap-3">
+                      <CheckCircle className="w-6 h-6" />
+                      <span>
+                        {scope === 'local' && localType === 'odwolawcze' 
+                          ? "Gratulacje! Udało się odwołać organ." 
+                          : "Gratulacje! Decyzja jest wiążąca i pozytywna."}
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Informacja o PORAŻCE (wynik negatywny) */}
+                  {(!data.isValid || !data.isDecisive) && collectedSignatures >= data.signatures && (
+                    <div className="mt-6 bg-red-600 text-white p-4 rounded-lg text-center font-bold shadow-lg flex items-center justify-center gap-3">
+                      <XCircle className="w-6 h-6" />
+                      <span>
+                        {scope === 'local' && localType === 'odwolawcze' 
+                          ? "Tym razem nie udało się odwołać organu!" 
+                          : scope === 'local' 
+                            ? "Tym razem nie udało się podjąć wiążącej decyzji!" 
+                            : "Tym razem głosowanie nie przyniosło rozstrzygnięcia!"}
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
-
-              {/* Informacja o SUKCESIE (wynik pozytywny) */}
-              {(data.isValid && data.isDecisive) && (
-                <div className="mt-6 bg-green-600 text-white p-4 rounded-lg text-center font-bold shadow-lg flex items-center justify-center gap-3">
-                  <CheckCircle className="w-6 h-6" />
-                  <span>
-                    {scope === 'local' && localType === 'odwolawcze' 
-                      ? "Gratulacje! Udało się odwołać organ." 
-                      : "Gratulacje! Decyzja jest wiążąca i pozytywna."}
-                  </span>
-                </div>
-              )}
-
-              {/* Informacja o PORAŻCE (wynik negatywny) */}
-              {(!data.isValid || !data.isDecisive) && collectedSignatures >= data.signatures && (
-                <div className="mt-6 bg-red-600 text-white p-4 rounded-lg text-center font-bold shadow-lg flex items-center justify-center gap-3">
-                  <XCircle className="w-6 h-6" />
-                  <span>
-                    {scope === 'local' && localType === 'odwolawcze' 
-                      ? "Tym razem nie udało się odwołać organu!" 
-                      : scope === 'local' 
-                        ? "Tym razem nie udało się podjąć wiążącej decyzji!" 
-                        : "Tym razem głosowanie nie przyniosło rozstrzygnięcia!"}
-                  </span>
-                </div>
-              )}
             </div>
-          </div>
-        </div>
 
-        {/* PRZYCISK: Historyczne wyniki w Polsce */}
-        <div className="flex justify-center">
-          <button 
-            onClick={() => setShowPolishHistory(!showPolishHistory)}
-            className="w-full md:w-[850px] bg-white hover:bg-gray-50 text-black font-extrabold py-8 px-10 text-2xl rounded-2xl transition-all shadow-lg flex items-center justify-center gap-6 border border-gray-200 active:translate-y-1"
-          >
-            <PolishFlagIcon className="w-12 h-12 shadow-md flex-shrink-0" />
-            <span className="text-center">{showPolishHistory ? "Ukryj historię z Polski" : "Historyczne wyniki referendów w Polsce"}</span>
-          </button>
-        </div>
-
-        {/* Tabela historyczna Polska */}
-        {showPolishHistory && (
-          <div className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden animate-in fade-in slide-in-from-top-4 duration-500">
-            <div className="bg-gray-50 px-4 py-3 border-b border-gray-200 flex items-center gap-2">
-              <Info className="w-5 h-5 text-gray-500" />
-              <h3 className="font-bold text-gray-800 text-sm uppercase tracking-wide">Historyczne wyniki ({scope === 'local' ? 'Lokalne' : 'Ogólnokrajowe'})</h3>
+            {/* PRZYCISK: Historyczne wyniki w Polsce */}
+            <div className="flex justify-center">
+              <button 
+                onClick={() => setShowPolishHistory(!showPolishHistory)}
+                className="w-full md:w-[850px] bg-white hover:bg-gray-50 text-black font-extrabold py-8 px-10 text-2xl rounded-2xl transition-all shadow-lg flex items-center justify-center gap-6 border border-gray-200 active:translate-y-1"
+              >
+                <PolishFlagIcon className="w-12 h-12 shadow-md flex-shrink-0" />
+                <span className="text-center">{showPolishHistory ? "Ukryj historię z Polski" : "Historyczne wyniki referendów w Polsce"}</span>
+              </button>
             </div>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm text-left text-gray-600">
-                <thead className="text-xs text-gray-700 uppercase bg-gray-100">
-                  <tr>
-                    {scope === 'local' ? (
-                      <>
+
+            {/* Tabela historyczna Polska */}
+            {showPolishHistory && (
+              <div className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden animate-in fade-in slide-in-from-top-4 duration-500">
+                <div className="bg-gray-50 px-4 py-3 border-b border-gray-200 flex items-center gap-2">
+                  <Info className="w-5 h-5 text-gray-500" />
+                  <h3 className="font-bold text-gray-800 text-sm uppercase tracking-wide">Historyczne wyniki ({scope === 'local' ? 'Lokalne' : 'Ogólnokrajowe'})</h3>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm text-left text-gray-600">
+                    <thead className="text-xs text-gray-700 uppercase bg-gray-100">
+                      <tr>
+                        {scope === 'local' ? (
+                          <>
+                            <th className="px-4 py-2">Lp.</th>
+                            <th className="px-4 py-2">Miejsce przeprowadzenia</th>
+                            <th className="px-4 py-2">Data</th>
+                            <th className="px-4 py-2">Przedmiot referendum</th>
+                            <th className="px-4 py-2 text-right">Frekwencja [%]</th>
+                            <th className="px-4 py-2">Próg ważności</th>
+                            <th className="px-4 py-2">Status / Wynik</th>
+                          </>
+                        ) : (
+                          <>
+                            <th className="px-4 py-2">Rok</th>
+                            <th className="px-4 py-2">Przedmiot</th>
+                            <th className="px-4 py-2 text-right">Frekwencja</th>
+                            <th className="px-4 py-2 text-right">Próg ważności</th>
+                            <th className="px-4 py-2">Wynik</th>
+                          </>
+                        )}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {scope === 'local' ? localHistoryData.map((item, idx) => (
+                        <tr key={idx} className={`border-b ${idx % 2 !== 0 ? 'bg-gray-50' : ''}`}>
+                          <td className="px-4 py-2">{item.lp}.</td>
+                          <td className="px-4 py-2 font-medium text-gray-900">{item.miejsce}</td>
+                          <td className="px-4 py-2">{item.data}</td>
+                          <td className="px-4 py-2">{item.przedmiot}</td>
+                          <td className={`px-4 py-2 text-right font-bold ${item.wynik.includes('Nieważne') ? 'text-red-600' : 'text-green-600'}`}>
+                          {item.frekwencja}
+                          </td>
+                          <td className="px-4 py-2 text-xs text-gray-500">{item.prog}</td>
+                          <td className="px-4 py-2"><span className={`px-2 py-1 rounded text-xs font-medium ${item.status === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>{item.wynik}</span></td>
+                        </tr>
+                      )) : nationalHistoryData.map((item, idx) => (
+                        <tr key={idx} className={`border-b ${idx % 2 !== 0 ? 'bg-gray-50' : ''}`}>
+                          <td className="px-4 py-2 font-medium">{item.rok}</td>
+                          <td className="px-4 py-2">{item.przedmiot}</td>
+                          <td className={`px-4 py-2 text-right font-bold ${item.wynik.includes('Niewiążące') ? 'text-red-600' : 'text-green-600'}`}>
+      {item.frekwencja}
+    </td>
+                          <td className="px-4 py-2 text-right text-xs text-gray-500">{item.prog}</td>
+                          <td className="px-4 py-2"><span className={`px-2 py-1 rounded text-xs font-medium ${item.status === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>{item.wynik}</span></td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+
+            {/* PRZYCISK: Zewnętrzne porównanie (Szwajcaria / UE) */}
+            <div className="flex justify-center">
+              <button 
+                onClick={() => setShowExternalComparison(!showExternalComparison)}
+                className="w-full md:w-[850px] bg-white hover:bg-gray-50 text-black font-extrabold py-8 px-10 text-2xl rounded-2xl transition-all shadow-lg flex items-center justify-center gap-6 border border-gray-200 active:translate-y-1"
+              >
+                {scope === 'local' ? (
+                  <SwissFlagIcon className="w-12 h-12 shadow-md flex-shrink-0" />
+                ) : (
+                  <EUFlagIcon className="w-12 h-12 shadow-md flex-shrink-0" />
+                )}
+                <span className="text-center">{showExternalComparison ? "Ukryj" : (scope === 'local' ? "Zobacz jak to wygląda w Szwajcarii" : "Zobacz jak to wygląda w Unii Europejskiej")}</span>
+              </button>
+            </div>
+
+            {/* Sekcja Porównawcza (Szwajcaria / UE) */}
+            {showExternalComparison && (
+              <div className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden animate-in fade-in slide-in-from-top-4 duration-500">
+                <div className="bg-blue-50 px-4 py-3 border-b border-gray-200 flex flex-col md:flex-row md:items-center justify-between gap-2">
+                  <div className="flex items-center gap-2">
+                    <Flag className="w-5 h-5 text-red-600" />
+                    <h3 className="font-bold text-gray-800 text-sm uppercase tracking-wide">
+                      {scope === 'local' ? "Model Szwajcarski: Demokracja Bezpośrednia" : "Unia Europejska: Standardy Demokratyczne"}
+                    </h3>
+                  </div>
+                  <div className="flex gap-2 md:mr-32">
+                    {scope === 'local' && (
+                      <span className="text-[10px] bg-green-100 text-green-800 px-2 py-0.5 rounded font-bold uppercase">Brak progów frekwencji</span>
+                    )}
+                  </div>
+                </div>
+                
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm text-left text-gray-600">
+                    <thead className="text-xs text-gray-700 uppercase bg-gray-100">
+                      <tr>
                         <th className="px-4 py-2">Lp.</th>
-                        <th className="px-4 py-2">Miejsce przeprowadzenia</th>
+                        <th className="px-4 py-2">Miejsce</th>
                         <th className="px-4 py-2">Data</th>
                         <th className="px-4 py-2">Przedmiot referendum</th>
-                        <th className="px-4 py-2 text-right">Frekwencja [%]</th>
+                        <th className="px-4 py-2 text-right">Frekwencja</th>
                         <th className="px-4 py-2">Próg ważności</th>
                         <th className="px-4 py-2">Status / Wynik</th>
-                      </>
-                    ) : (
-                      <>
-                        <th className="px-4 py-2">Rok</th>
-                        <th className="px-4 py-2">Przedmiot</th>
-                        <th className="px-4 py-2 text-right">Frekwencja</th>
-                        <th className="px-4 py-2 text-right">Próg ważności</th>
-                        <th className="px-4 py-2">Wynik</th>
-                      </>
-                    )}
-                  </tr>
-                </thead>
-                <tbody>
-                  {scope === 'local' ? localHistoryData.map((item, idx) => (
-                    <tr key={idx} className={`border-b ${idx % 2 !== 0 ? 'bg-gray-50' : ''}`}>
-                      <td className="px-4 py-2">{item.lp}.</td>
-                      <td className="px-4 py-2 font-medium text-gray-900">{item.miejsce}</td>
-                      <td className="px-4 py-2">{item.data}</td>
-                      <td className="px-4 py-2">{item.przedmiot}</td>
-                      <td className={`px-4 py-2 text-right font-bold ${item.wynik.includes('Nieważne') ? 'text-red-600' : 'text-green-600'}`}>
-                      {item.frekwencja}
-                      </td>
-                      <td className="px-4 py-2 text-xs text-gray-500">{item.prog}</td>
-                      <td className="px-4 py-2"><span className={`px-2 py-1 rounded text-xs font-medium ${item.status === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>{item.wynik}</span></td>
-                    </tr>
-                  )) : nationalHistoryData.map((item, idx) => (
-                    <tr key={idx} className={`border-b ${idx % 2 !== 0 ? 'bg-gray-50' : ''}`}>
-                      <td className="px-4 py-2 font-medium">{item.rok}</td>
-                      <td className="px-4 py-2">{item.przedmiot}</td>
-                      <td className={`px-4 py-2 text-right font-bold ${item.wynik.includes('Niewiążące') ? 'text-red-600' : 'text-green-600'}`}>
-  {item.frekwencja}
-</td>
-                      <td className="px-4 py-2 text-right text-xs text-gray-500">{item.prog}</td>
-                      <td className="px-4 py-2"><span className={`px-2 py-1 rounded text-xs font-medium ${item.status === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>{item.wynik}</span></td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        )}
-
-        {/* PRZYCISK: Zewnętrzne porównanie (Szwajcaria / UE) */}
-        <div className="flex justify-center">
-          <button 
-            onClick={() => setShowExternalComparison(!showExternalComparison)}
-            className="w-full md:w-[850px] bg-white hover:bg-gray-50 text-black font-extrabold py-8 px-10 text-2xl rounded-2xl transition-all shadow-lg flex items-center justify-center gap-6 border border-gray-200 active:translate-y-1"
-          >
-            {scope === 'local' ? (
-              <SwissFlagIcon className="w-12 h-12 shadow-md flex-shrink-0" />
-            ) : (
-              <EUFlagIcon className="w-12 h-12 shadow-md flex-shrink-0" />
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {(scope === 'local' ? swissData : euData).map((item, index) => (
+                        <tr key={item.lp} className={`border-b ${index % 2 !== 0 ? 'bg-gray-50' : ''}`}>
+                          <td className="px-4 py-2 font-medium text-gray-900">{item.lp}.</td>
+                          <td className="px-4 py-2">{item.miejsce}</td>
+                          <td className="px-4 py-2">{item.data}</td>
+                          <td className="px-4 py-2">{item.przedmiot}</td>
+                        <td className={`px-4 py-2 text-right font-bold ${item.wynik.includes('Nieważne') ? 'text-red-600' : 'text-green-600'}`}>
+      {item.frekwencja}
+    </td>
+                          <td className="px-4 py-2 text-xs">{scope === 'local' ? "Brak" : item.prog}</td>
+                          <td className="px-4 py-2">
+                            <span className={`px-2 py-1 rounded text-xs font-medium ${item.status === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+                              {item.wynik}
+                            </span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="p-3 bg-gray-50 text-[11px] text-gray-500 text-center italic border-t border-gray-200">
+                  {scope === 'local' 
+                    ? "Szwajcaria: Głosy są wiążące niezależnie od liczby uczestników." 
+                    : "Unia Europejska: Standardy progów kworum różnią się między krajami członkowskimi."}
+                </div>
+              </div>
             )}
-            <span className="text-center">{showExternalComparison ? "Ukryj" : (scope === 'local' ? "Zobacz jak to wygląda w Szwajcarii" : "Zobacz jak to wygląda w Unii Europejskiej")}</span>
-          </button>
-        </div>
 
-        {/* Sekcja Porównawcza (Szwajcaria / UE) */}
-        {showExternalComparison && (
-          <div className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden animate-in fade-in slide-in-from-top-4 duration-500">
-            <div className="bg-blue-50 px-4 py-3 border-b border-gray-200 flex flex-col md:flex-row md:items-center justify-between gap-2">
-              <div className="flex items-center gap-2">
-                <Flag className="w-5 h-5 text-red-600" />
-                <h3 className="font-bold text-gray-800 text-sm uppercase tracking-wide">
-                  {scope === 'local' ? "Model Szwajcarski: Demokracja Bezpośrednia" : "Unia Europejska: Standardy Demokratyczne"}
-                </h3>
-              </div>
-              <div className="flex gap-2 md:mr-32">
-                {scope === 'local' && (
-                  <span className="text-[10px] bg-green-100 text-green-800 px-2 py-0.5 rounded font-bold uppercase">Brak progów frekwencji</span>
-                )}
+            {/* Postulaty zmian */}
+            <div className="bg-gray-900 text-white rounded-xl overflow-hidden shadow-xl">
+              <div className="p-8 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="mb-6 md:mb-0">
+                  <h2 className="text-2xl font-black text-red-500 mb-2 uppercase tracking-wide">Postulaty zmian</h2>
+                  <p className="text-gray-300 max-w-2xl text-sm leading-relaxed">Polski system faworyzuje bierność. Zniesienie lub obniżenie progów referendalnych mogłaby oddać decyzyjność w ręce obywateli!</p>
+                </div>
+                <button 
+                  onClick={() => { setCurrentView('postulates'); window.scrollTo(0, 0); }}
+                  className="whitespace-nowrap bg-red-600 hover:bg-red-500 text-white font-bold py-4 px-8 rounded-lg transition-colors shadow-lg flex items-center justify-center gap-2"
+                >
+                  Dowiedz się więcej <ArrowRight className="w-5 h-5" />
+                </button>
               </div>
             </div>
-            
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm text-left text-gray-600">
-                <thead className="text-xs text-gray-700 uppercase bg-gray-100">
-                  <tr>
-                    <th className="px-4 py-2">Lp.</th>
-                    <th className="px-4 py-2">Miejsce</th>
-                    <th className="px-4 py-2">Data</th>
-                    <th className="px-4 py-2">Przedmiot referendum</th>
-                    <th className="px-4 py-2 text-right">Frekwencja</th>
-                    <th className="px-4 py-2">Próg ważności</th>
-                    <th className="px-4 py-2">Status / Wynik</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {(scope === 'local' ? swissData : euData).map((item, index) => (
-                    <tr key={item.lp} className={`border-b ${index % 2 !== 0 ? 'bg-gray-50' : ''}`}>
-                      <td className="px-4 py-2 font-medium text-gray-900">{item.lp}.</td>
-                      <td className="px-4 py-2">{item.miejsce}</td>
-                      <td className="px-4 py-2">{item.data}</td>
-                      <td className="px-4 py-2">{item.przedmiot}</td>
-                     <td className={`px-4 py-2 text-right font-bold ${item.wynik.includes('Nieważne') ? 'text-red-600' : 'text-green-600'}`}>
-  {item.frekwencja}
-</td>
-                      <td className="px-4 py-2 text-xs">{scope === 'local' ? "Brak" : item.prog}</td>
-                      <td className="px-4 py-2">
-                        <span className={`px-2 py-1 rounded text-xs font-medium ${item.status === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
-                          {item.wynik}
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <div className="p-3 bg-gray-50 text-[11px] text-gray-500 text-center italic border-t border-gray-200">
-              {scope === 'local' 
-                ? "Szwajcaria: Głosy są wiążące niezależnie od liczby uczestników." 
-                : "Unia Europejska: Standardy progów kworum różnią się między krajami członkowskimi."}
+
+            {/* Stopka z Logo i Informacją o Fundacji */}
+            <div className="text-xs text-gray-500 text-center pb-8 mt-6">
+              <div className="flex flex-col items-center gap-6">
+                <div className="space-y-1">
+                  <p>Aplikacja edukacyjna przygotowana przez Fundację Polskiego Rozwoju 🇵🇱. Dane szacunkowe na 2025.</p>
+                </div>
+                <div className="opacity-90 hover:opacity-100 transition-opacity">
+                  <FPRLogo />
+                </div>
+              </div>
             </div>
           </div>
         )}
-
-        {/* Postulaty zmian */}
-        <div className="bg-gray-900 text-white rounded-xl overflow-hidden shadow-xl">
-          <div className="p-8 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="mb-6 md:mb-0">
-              <h2 className="text-2xl font-black text-red-500 mb-2 uppercase tracking-wide">Postulaty zmian</h2>
-              <p className="text-gray-300 max-w-2xl text-sm leading-relaxed">Polski system faworyzuje bierność. Zniesienie lub obniżenie progów referendalnych mogłaby oddać decyzyjność w ręce obywateli!</p>
-            </div>
-            <button 
-              onClick={() => { setCurrentView('postulates'); window.scrollTo(0, 0); }}
-              className="whitespace-nowrap bg-red-600 hover:bg-red-500 text-white font-bold py-4 px-8 rounded-lg transition-colors shadow-lg flex items-center justify-center gap-2"
-            >
-              Dowiedz się więcej <ArrowRight className="w-5 h-5" />
-            </button>
-          </div>
-        </div>
-
-        {/* Stopka z Logo i Informacją o Fundacji */}
-        <div className="text-xs text-gray-500 text-center pb-8 mt-6">
-          <div className="flex flex-col items-center gap-6">
-            <div className="space-y-1">
-              <p>Aplikacja edukacyjna przygotowana przez Fundację Polskiego Rozwoju 🇵🇱. Dane szacunkowe na 2025.</p>
-            </div>
-            <div className="opacity-90 hover:opacity-100 transition-opacity">
-              <FPRLogo />
-            </div>
-          </div>
-        </div>
       </main>
     </div>
   );
