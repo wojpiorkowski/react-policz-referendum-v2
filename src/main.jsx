@@ -879,7 +879,7 @@ export default function App() {
 
             {/* Stopka z Logo i Informacją o Fundacji */}
             <div className="text-xs text-gray-500 text-center pb-8 mt-6">
-              <div className="flex flex-col items-center gap-1">
+              <div className="flex flex-col items-center gap-2">
                 <div className="space-y-1">
                   <p>Aplikacja edukacyjna przygotowana przez Fundację Polskiego Rozwoju 🇵🇱. Dane szacunkowe na 2025.</p>
                 </div>
