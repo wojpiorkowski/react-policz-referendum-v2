@@ -313,19 +313,21 @@ export default function App() {
       <header className="bg-white text-gray-900 pt-8 shadow-sm border-b border-gray-200 relative overflow-hidden z-10">
         <div className="max-w-5xl mx-auto flex flex-col items-center justify-center text-center gap-6 px-4">
           
-          {/* Logo Fundacji na samej górze */}
+          {/* Polska flaga na samej górze - POWIĘKSZONA */}
           <div className="w-full flex justify-center mb-2">
-            <FPRLogo className="scale-[0.85] md:scale-100 origin-top transform" />
+            <div className="w-28 h-16 flex flex-col rounded-lg shadow-md overflow-hidden border border-gray-200 ring-4 ring-gray-50 transform hover:scale-105 transition-transform duration-300">
+              <div className="w-full h-1/2 bg-white"></div>
+              <div className="w-full h-1/2 bg-[#DC143C]"></div>
+            </div>
           </div>
           
           {/* Nowy Tytuł i Lead */}
           <div className="flex flex-col items-center">
-            <h1 className="font-black tracking-tight text-gray-900 mb-4 uppercase leading-none">
+            <h1 className="font-black tracking-tight text-gray-900 mb-4 uppercase leading-none text-center">
               <span className="text-4xl md:text-6xl text-red-600 block mb-2">POLICZ REFERENDUM</span>
-              <span className="text-xl md:text-1xl text-red-600 block">Przywróćmy głos obywatelom!</span>
             </h1>
-            <p className="text-gray-600 text-base md:text-lg font-medium max-w-2xl mx-auto leading-relaxed">
-              Postulujemy 4 zmiany do systemu referendalnego w Polsce. Naprawmy wspólnie naszą demokrację!
+            <p className="text-gray-600 text-base md:text-lg font-bold max-w-2xl mx-auto leading-relaxed">
+              Postulujemy 4 zmiany do systemu referendalnego w Polsce.<br />Przywróćmy głos obywatelom!
             </p>
           </div>
         </div>
@@ -376,9 +378,9 @@ export default function App() {
                 icon={Gavel}
                 title="2. Wprowadzenie Weta Obywatelskiego"
                 problem="Obywatele nie mają dziś narzędzia, by zatrzymać ustawę uchwaloną przez Parlament i podpisaną przez Prezydenta, która budzi powszechny sprzeciw społeczny."
-                postulate="Wprowadzenie instytucji Weta Obywatelskiego (referendum zatwierdzającego dla ustaw)."
+                postulate="Wprowadzenie instytucji Weta Obywatelskiego (referendum odrzucającego dla ustaw)."
                 detailLabel="Jak to działa?"
-                detailValue="Jeśli obywatele w krótkim czasie (np. 100 dni) zbiorą 500 000 podpisów, nowa ustawa trafia pod ogólnokrajowe głosowanie. Jeśli Suweren powie NIE – ustawa wraca na początek ścieżni legislacyjnej."
+                detailValue="Jeśli obywatele w krótkim czasie (np. 100 dni) zbiorą 500 000 podpisów, nowa ustawa trafia pod ogólnokrajowe głosowanie. Jeśli Suweren powie NIE – ustawa wraca na początek ścieżki legislacyjnej."
               />
 
               <PostulateCard 
@@ -393,29 +395,16 @@ export default function App() {
               <PostulateCard 
                 icon={BookOpen}
                 title="4. Centralny rejestr referendów"
-                problem="Przed referendami obywatele często nie są w stanie dotrzeć do szczegółów propozycji oraz poznać argumenty obu stron."
+                problem="Przed referendami obywatele często nie są w stanie dotrzeć do szczegółów propozycji oraz zapoznać się z merytorycznymi argumentami obu stron."
                 postulate="Centralny rejestr referendów - rządowa strona internetowa prezentująca listę wszystkich referendów lokalnych i ogólnopolskich, z transparentnie zaprezentowanymi argumentami obu stron."
                 detailLabel="Co w środku?"
-                detailValue="Co w środku? Jasny opis zmian oraz argumenty stron ZA i PRZECIW, przygotowane przez inicjatorów i oponentów w równym wymiarze miejsca."
+                detailValue="Jasny opis zmian oraz argumenty stron ZA i PRZECIW, przygotowane przez inicjatorów i oponentów w równym wymiarze miejsca."
               />
               
             </div>
-
-            <div className="mt-16 p-8 bg-gradient-to-br from-red-50 to-white rounded-3xl text-gray-900 relative overflow-hidden shadow-xl border border-red-100">
-              <div className="relative z-10 space-y-4 text-center md:text-left">
-                <h3 className="text-2xl font-black uppercase text-red-600 tracking-tight flex items-center justify-center md:justify-start gap-3">
-                  <ShieldCheck className="w-8 h-8 text-red-500" /> Dlaczego to ważne?
-                </h3>
-                <p className="text-lg text-gray-700 leading-relaxed italic font-medium">
-                  „Referendum to nie jest wojna, to rozmowa o wspólnej przyszłości”. Obecne prawo czyni tę rozmowę niezwykle trudną. Demokracja nie może kończyć się przy urnie wyborczej raz na kilka lat.
-                </p>
-              </div>
-              <div className="absolute -top-12 -right-12 w-48 h-48 bg-red-500 opacity-5 rounded-full"></div>
-              <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-red-500 opacity-5 rounded-full"></div>
-            </div>
             
             <div className="mt-24 pt-12 border-t border-gray-100 flex flex-col items-center">
-              <p className="text-xs text-gray-400 font-bold mb-8 uppercase tracking-widest">Inicjatywa wspierana przez</p>
+              <p className="text-xs text-gray-500 text-center mb-8">Aplikacja edukacyjna przygotowana przez Fundację Polskiego Rozwoju 🇵🇱. Dane szacunkowe na 2025.</p>
               <div className="opacity-90 hover:opacity-100 transition-opacity">
                 <FPRLogo />
               </div>
@@ -611,12 +600,7 @@ export default function App() {
                       {formatNum(collectedSignatures)} ({((collectedSignatures / nationalU) * 100).toFixed(1)}%)
                     </span>
                   </div>
-                  <input 
-                    type="range" min="0" max={nationalU} step="1000"
-                    className={`w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer mb-3 mt-2 transition-colors duration-300 ${collectedSignatures >= data.signatures ? 'accent-green-600' : 'accent-red-600'}`}
-                    value={collectedSignatures || 0} 
-                    onChange={(e) => setCollectedSignatures(Math.min(Number(e.target.value), nationalU))} 
-                  />
+                  <input type="range" min="0" max={nationalU} step="1000" className={`w-full h-2 mb-3 transition-colors duration-300 ${collectedSignatures >= data.signatures ? 'accent-green-600' : 'accent-red-600'}`} value={collectedSignatures} onChange={(e) => setCollectedSignatures(Math.min(Number(e.target.value), nationalU))} />
                   <input 
                     type="number" min="0" max={nationalU}
                     className="w-full border border-gray-300 rounded-md p-2 focus:ring-red-500 focus:border-red-500"
@@ -760,11 +744,14 @@ export default function App() {
                     <div className="mt-6 bg-red-600 text-white p-4 rounded-lg text-center font-bold shadow-lg flex items-center justify-center gap-3">
                       <XCircle className="w-6 h-6" />
                       <span>
-                        {scope === 'local' && localType === 'odwolawcze' 
-                          ? "Tym razem nie udało się odwołać organu!" 
-                          : scope === 'local' 
-                            ? "Tym razem nie udało się podjąć wiążącej decyzji!" 
-                            : "Tym razem głosowanie nie przyniosło rozstrzygnięcia!"}
+                        {data.isValid && !data.isDecisive
+                          ? "Decyzja jest wiążąca, ale większość głosujących była za odrzuceniem postulatów."
+                          : (scope === 'local' && localType === 'odwolawcze' 
+                              ? "Tym razem nie udało się odwołać organu!" 
+                              : scope === 'local' 
+                                ? "Tym razem nie udało się podjąć wiążącej decyzji!" 
+                                : "Tym razem głosowanie nie przyniosło rozstrzygnięcia!")
+                        }
                       </span>
                     </div>
                   )}
@@ -924,7 +911,7 @@ export default function App() {
               <div className="p-8 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6">
                 <div className="mb-6 md:mb-0">
                   <h2 className="text-2xl font-black text-red-500 mb-2 uppercase tracking-wide">Postulaty zmian</h2>
-                  <p className="text-gray-300 max-w-2xl text-sm leading-relaxed">Polski system faworyzuje bierność. Zniesienie lub obniżenie progów referendalnych mogłaby oddać decyzyjność w ręce obywateli!</p>
+                  <p className="text-gray-300 max-w-2xl text-sm leading-relaxed">Polski system referendalny faworyzuje bierność. Przywróćmy głos obywatelom!</p>
                 </div>
                 <button 
                   onClick={() => { setCurrentView('postulates'); window.scrollTo(0, 0); }}
