@@ -551,7 +551,12 @@ export default function App() {
                       {formatNum(collectedSignatures)} ({((collectedSignatures / nationalU) * 100).toFixed(1)}%)
                     </span>
                   </div>
-                  <input type="range" min="0" max={nationalU} step="1000" className={`w-full h-2 mb-3 transition-colors duration-300 ${collectedSignatures >= data.signatures ? 'accent-green-600' : 'accent-red-600'}`} value={collectedSignatures} onChange={(e) => setCollectedSignatures(Math.min(Number(e.target.value), nationalU))} />
+                  <input 
+  type="range" min="0" max={nationalU} step="1000" 
+  className={`w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer mb-3 mt-2 transition-colors duration-300 ${collectedSignatures >= data.signatures ? 'accent-green-600' : 'accent-red-600'}`} 
+  value={collectedSignatures} 
+  onChange={(e) => setCollectedSignatures(Math.min(Number(e.target.value), nationalU))} 
+/>
                   <input 
                     type="number" min="0" max={nationalU}
                     className="w-full border border-gray-300 rounded-md p-2 focus:ring-red-500 focus:border-red-500"
