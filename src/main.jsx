@@ -321,7 +321,7 @@ export default function App() {
           {/* Nowy Tytuł i Lead */}
           <div className="flex flex-col items-center">
             <h1 className="font-black tracking-tight text-gray-900 mb-4 uppercase leading-none">
-              <span className="text-4xl md:text-6xl text-gray-600 block mb-2">POLICZ REFERENDUM</span>
+              <span className="text-4xl md:text-6xl text-red-600 block mb-2">POLICZ REFERENDUM</span>
               <span className="text-xl md:text-1xl text-red-600 block">Przywróćmy głos obywatelom!</span>
             </h1>
             <p className="text-gray-600 text-base md:text-lg font-medium max-w-2xl mx-auto leading-relaxed">
@@ -378,7 +378,7 @@ export default function App() {
                 problem="Obywatele nie mają dziś narzędzia, by zatrzymać ustawę uchwaloną przez Parlament i podpisaną przez Prezydenta, która budzi powszechny sprzeciw społeczny."
                 postulate="Wprowadzenie instytucji Weta Obywatelskiego (referendum zatwierdzającego dla ustaw)."
                 detailLabel="Jak to działa?"
-                detailValue="Jeśli obywatele w krótkim czasie (np. 100 dni) zbiorą 500 000 podpisów, nowa ustawa trafia pod ogólnokrajowe głosowanie. Jeśli Suweren powie NIE – ustawa wraca na początek ścieżki legislacyjnej."
+                detailValue="Jeśli obywatele w krótkim czasie (np. 100 dni) zbiorą 500 000 podpisów, nowa ustawa trafia pod ogólnokrajowe głosowanie. Jeśli Suweren powie NIE – ustawa wraca na początek ścieżni legislacyjnej."
               />
 
               <PostulateCard 
@@ -433,7 +433,8 @@ export default function App() {
               </h2>
 
               {scope === 'local' ? (
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-8">
+                  {/* KROK 1: Wybierz jednostkę samorządu */}
                   <div className="space-y-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">Wybierz jednostkę samorządu</label>
@@ -475,10 +476,11 @@ export default function App() {
                     )}
                   </div>
 
+                  {/* KROK 2: Przedmiot referendum */}
                   <div className="space-y-4">
                     <label className="block text-sm font-medium text-gray-700 mb-1">Przedmiot referendum</label>
-                    <div className="space-y-2">
-                      <label className="flex items-start gap-2 p-3 border rounded-md cursor-pointer hover:bg-gray-50 transition-colors">
+                    <div className="grid md:grid-cols-3 gap-3">
+                      <label className={`flex items-start gap-2 p-3 border rounded-md cursor-pointer transition-colors ${localType === 'odwolawcze' ? 'bg-red-50 border-red-500 shadow-sm' : 'hover:bg-gray-50'}`}>
                         <input type="radio" name="localType" className="mt-1 text-red-600 focus:ring-red-500" 
                           checked={localType === 'odwolawcze'} onChange={() => setLocalType('odwolawcze')} />
                         <div>
@@ -486,7 +488,7 @@ export default function App() {
                           <span className="text-xs text-gray-500">Próg: 3/5 głosów z poprzednich wyborów</span>
                         </div>
                       </label>
-                      <label className="flex items-start gap-2 p-3 border rounded-md cursor-pointer hover:bg-gray-50 transition-colors">
+                      <label className={`flex items-start gap-2 p-3 border rounded-md cursor-pointer transition-colors ${localType === 'merytoryczne' ? 'bg-red-50 border-red-500 shadow-sm' : 'hover:bg-gray-50'}`}>
                         <input type="radio" name="localType" className="mt-1 text-red-600 focus:ring-red-500" 
                           checked={localType === 'merytoryczne'} onChange={() => setLocalType('merytoryczne')} />
                         <div>
@@ -494,7 +496,7 @@ export default function App() {
                           <span className="text-xs text-gray-500">Próg: 30% uprawnionych mieszkańców</span>
                         </div>
                       </label>
-                      <label className="flex items-start gap-2 p-3 border rounded-md cursor-pointer hover:bg-gray-50 transition-colors">
+                      <label className={`flex items-start gap-2 p-3 border rounded-md cursor-pointer transition-colors ${localType === 'podatki' ? 'bg-red-50 border-red-500 shadow-sm' : 'hover:bg-gray-50'}`}>
                         <input type="radio" name="localType" className="mt-1 text-red-600 focus:ring-red-500" 
                           checked={localType === 'podatki'} onChange={() => setLocalType('podatki')} />
                         <div>
@@ -506,40 +508,45 @@ export default function App() {
                   </div>
                 </div>
               ) : (
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-8">
+                  {/* KROK 1: Liczba uprawnionych do głosowania (kraj) */}
                   <div className="space-y-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">Liczba uprawnionych do głosowania (kraj)</label>
                       <input type="number" className="w-full border border-gray-300 rounded-md p-2" value={nationalU} onChange={(e) => setNationalU(Number(e.target.value))} />
                     </div>
                   </div>
+
+                  {/* KROK 2: Przedmiot referendum */}
                   <div className="space-y-4">
                     <label className="block text-sm font-medium text-gray-700 mb-1">Przedmiot referendum</label>
-                    <label className="flex items-start gap-2 p-3 border rounded-md cursor-pointer hover:bg-gray-50 transition-colors">
-                      <input 
-                        type="radio" 
-                        className="mt-1 text-red-600 focus:ring-red-500" 
-                        checked={nationalType === 'art125'} 
-                        onChange={() => setNationalType('art125')} 
-                      />
-                      <div>
-                        <span className="block font-medium text-gray-800">Sprawy o szczególnym znaczeniu (Art. 125)</span>
-                        <span className="text-xs text-gray-500 font-normal">Wiążące przy frekwencji &gt; 50%</span>
-                      </div>
-                    </label>
-                    
-                    <label className="flex items-start gap-2 p-3 border rounded-md cursor-pointer hover:bg-gray-50 transition-colors">
-                      <input 
-                        type="radio" 
-                        className="mt-1 text-red-600 focus:ring-red-500" 
-                        checked={nationalType === 'art235'} 
-                        onChange={() => setNationalType('art235')} 
-                      />
-                      <div>
-                        <span className="block font-medium text-gray-800">Konstytucyjne (Art. 235)</span>
-                        <span className="text-xs text-gray-500 font-normal">Zawsze wiążące, brak progu frekwencji</span>
-                      </div>
-                    </label>
+                    <div className="grid md:grid-cols-2 gap-3">
+                      <label className={`flex items-start gap-2 p-3 border rounded-md cursor-pointer transition-colors ${nationalType === 'art125' ? 'bg-red-50 border-red-500 shadow-sm' : 'hover:bg-gray-50'}`}>
+                        <input 
+                          type="radio" 
+                          className="mt-1 text-red-600 focus:ring-red-500" 
+                          checked={nationalType === 'art125'} 
+                          onChange={() => setNationalType('art125')} 
+                        />
+                        <div>
+                          <span className="block font-medium text-gray-800">Sprawy o szczególnym znaczeniu (Art. 125)</span>
+                          <span className="text-xs text-gray-500 font-normal">Wiążące przy frekwencji &gt; 50%</span>
+                        </div>
+                      </label>
+                      
+                      <label className={`flex items-start gap-2 p-3 border rounded-md cursor-pointer transition-colors ${nationalType === 'art235' ? 'bg-red-50 border-red-500 shadow-sm' : 'hover:bg-gray-50'}`}>
+                        <input 
+                          type="radio" 
+                          className="mt-1 text-red-600 focus:ring-red-500" 
+                          checked={nationalType === 'art235'} 
+                          onChange={() => setNationalType('art235')} 
+                        />
+                        <div>
+                          <span className="block font-medium text-gray-800">Konstytucyjne (Art. 235)</span>
+                          <span className="text-xs text-gray-500 font-normal">Zawsze wiążące, brak progu frekwencji</span>
+                        </div>
+                      </label>
+                    </div>
                   </div>
                 </div>
               )}
@@ -572,7 +579,9 @@ export default function App() {
                 <div className={`p-4 rounded-lg border transition-colors duration-300 ${collectedSignatures >= data.signatures ? 'bg-green-50/50 border-green-200' : 'bg-red-50/50 border-red-200'}`}>
                   <div className="flex justify-between mb-1">
                     <label className="block text-sm font-bold text-gray-800">Liczba zebranych podpisów</label>
-                    <span className={`font-bold text-sm ${collectedSignatures >= data.signatures ? 'text-green-600' : 'text-red-600'}`}>{formatNum(Number(collectedSignatures) || 0)}</span>
+                    <span className={`font-bold text-sm ${collectedSignatures >= data.signatures ? 'text-green-600' : 'text-red-600'}`}>
+                      {formatNum(Number(collectedSignatures) || 0)} ({((Number(collectedSignatures) / data.u) * 100).toFixed(1)}%)
+                    </span>
                   </div>
                   <input 
                     type="range" min="0" max={data.u} step="1"
@@ -598,7 +607,9 @@ export default function App() {
                 <div className={`p-4 rounded-lg border transition-colors duration-300 ${collectedSignatures >= data.signatures ? 'bg-green-50/50 border-green-200' : 'bg-red-50/50 border-red-200'}`}>
                   <div className="flex justify-between mb-1">
                     <label className="block text-sm font-bold text-gray-800">Liczba zebranych podpisów</label>
-                    <span className={`font-bold text-sm ${collectedSignatures >= data.signatures ? 'text-green-600' : 'text-red-600'}`}>{formatNum(collectedSignatures)}</span>
+                    <span className={`font-bold text-sm ${collectedSignatures >= data.signatures ? 'text-green-600' : 'text-red-600'}`}>
+                      {formatNum(collectedSignatures)} ({((collectedSignatures / nationalU) * 100).toFixed(1)}%)
+                    </span>
                   </div>
                   <input 
                     type="range" min="0" max={nationalU} step="1000"
