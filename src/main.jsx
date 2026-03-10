@@ -357,7 +357,7 @@ export default function App() {
             <div className="mt-24 pt-12 border-t border-gray-100 flex flex-col items-center">
               <p className="text-xs text-gray-500 text-center mb-8">Aplikacja edukacyjna przygotowana przez Fundację Polskiego Rozwoju 🇵🇱. Dane szacunkowe na 2025.</p>
              <div className="opacity-90 hover:opacity-100 transition-opacity">
-  <img src="/logo_FPR.svg" alt="Logo Fundacji" className="h-20 w-auto" />
+  <img src="/logo_FPR.svg" alt="Logo Fundacji" className="h-32 w-auto" />
 </div>
             </div>
           </div>
@@ -883,7 +883,7 @@ export default function App() {
   <img 
     src="./logo_FPR.svg" 
     alt="Fundacja Polskiego Rozwoju" 
-    className="h-20 w-auto opacity-90 hover:opacity-100 transition-opacity" 
+    className="h-32 w-auto opacity-90 hover:opacity-100 transition-opacity" 
   />
 </div>
               </div>
