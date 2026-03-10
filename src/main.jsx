@@ -160,7 +160,7 @@ export default function App() {
   // Stan dla zebranych podpisów (Domyślnie ustawiony na 100 000 zgodnie z prośbą)
   const [collectedSignatures, setCollectedSignatures] = useState(100000);
 
-  // Stan symulacji (suwaki)
+  // Stan symulacji (i)
   const [simTurnoutPct, setSimTurnoutPct] = useState(12);
   const [simSupportPct, setSimSupportPct] = useState(75);
 
@@ -556,12 +556,6 @@ export default function App() {
   className={`w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer mb-3 mt-2 transition-colors duration-300 ${collectedSignatures >= data.signatures ? 'accent-green-600' : 'accent-red-600'}`} 
   value={collectedSignatures} 
   onChange={(e) => setCollectedSignatures(Math.min(Number(e.target.value), nationalU))} 
-/>
-                  <input 
-  type="range" min="0" max={Math.floor(nationalU * 0.25)} step="1000" 
-  className={`w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer mb-3 mt-2 transition-colors duration-300 ${collectedSignatures >= data.signatures ? 'accent-green-600' : 'accent-red-600'}`} 
-  value={collectedSignatures} 
-  onChange={(e) => setCollectedSignatures(Math.min(Number(e.target.value), Math.floor(nationalU * 0.25)))} 
 />
 <input 
   type="number" min="0" max={Math.floor(nationalU * 0.25)}
