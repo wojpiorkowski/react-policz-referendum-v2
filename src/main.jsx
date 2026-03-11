@@ -902,10 +902,10 @@ export default function App() {
               </div>
               </div>
             </div>
-          </div> // To zamyka div "space-y-6" z początku bloku else (widok kalkulatora)
+          </div> 
         )} 
-      </main> // To zamyka znacznik <main>
-    </div> // To zamyka główny div aplikacji
+      </main> 
+    </div>
   );
 }
 
