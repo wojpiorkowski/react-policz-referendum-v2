@@ -354,11 +354,23 @@ export default function App() {
               
             </div>
             
-            <div className="mt-24 pt-12 border-t border-gray-100 flex flex-col items-center">
-              <p className="text-xs text-gray-500 text-center mb-8">Aplikacja edukacyjna przygotowana przez Fundację Polskiego Rozwoju 🇵🇱. Dane szacunkowe na 2025.</p>
-             <div className="opacity-90 hover:opacity-100 transition-opacity">
-  <img src="/logo_FPR.svg" alt="Logo Fundacji" className="h-48 w-auto" />
-</div>
+            <div className="mt-8 pt-6 flex flex-col items-center">
+              <div className="text-xs text-gray-500 text-center">
+                <p>Aplikacja edukacyjna przygotowana przez Fundację Polskiego Rozwoju 🇵🇱. Dane szacunkowe na 2025.</p>
+              </div>
+              <div className="mt-6 flex justify-center">
+                <img src="/logo_FPR.svg" alt="Logo Fundacji" className="h-48 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+              </div>
+              <div className="mt-4">
+                <a 
+                  href="https://fundacjapro.org" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-xs text-gray-500 hover:text-red-600 underline decoration-gray-300 hover:decoration-red-500 transition-colors"
+                >
+                  fundacjapro.org
+                </a>
+              </div>
             </div>
           </div>
         ) : (
@@ -877,24 +889,34 @@ export default function App() {
               </div>
             </div>
 
-            {/* Stopka z Logo i Informacją o Fundacji */}
+           {/* Stopka z Logo i Informacją o Fundacji */}
             <div className="text-xs text-gray-500 text-center pb-8 mt-6">
               <div className="flex flex-col items-center gap-2">
                 <div className="space-y-1">
-                  <p>Aplikacja edukacyjna przygotowana przez Fundację Polskiego Rozwoju 🇵🇱. Dane szacunkowe na 2025.</p>
+                  <p>Aplikacja edukacyjna przygotowana przez Fundację Polskiego Rozwoju 🇵🇱. Dane szacunkowe na 2026.</p>
                 </div>
                 <div className="mt-6 flex justify-center">
-  <img 
-    src="./logo_FPR.svg" 
-    alt="Fundacja Polskiego Rozwoju" 
-    className="h-48 w-auto opacity-90 hover:opacity-100 transition-opacity" 
-  />
-</div>
+                  <img 
+                    src="./logo_FPR.svg" 
+                    alt="Fundacja Polskiego Rozwoju" 
+                    className="h-48 w-auto opacity-90 hover:opacity-100 transition-opacity" 
+                  />
+                </div>
+                <div className="mt-4">
+                <a 
+                  href="https://fundacjapro.org" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-xs text-gray-500 hover:text-red-600 underline decoration-gray-300 hover:decoration-red-500 transition-colors"
+                >
+                  fundacjapro.org
+                </a>
+              </div>
               </div>
             </div>
-          </div>
-        )}
-      </main>
+          </div> 
+        )} 
+      </main> 
     </div>
   );
 }
