@@ -890,6 +890,16 @@ export default function App() {
                     className="h-48 w-auto opacity-90 hover:opacity-100 transition-opacity" 
                   />
                 </div>
+                <div className="mt-4">
+                <a 
+                  href="https://fundacjapro.org" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-xs text-gray-500 hover:text-red-600 underline decoration-gray-300 hover:decoration-red-500 transition-colors"
+                >
+                  fundacjapro.org
+                </a>
+              </div>
               </div>
             </div>
           </div> // To zamyka div "space-y-6" z początku bloku else (widok kalkulatora)
