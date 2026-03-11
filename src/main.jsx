@@ -275,8 +275,11 @@ export default function App() {
           {/* Nowy Tytuł i Lead */}
           <div className="flex flex-col items-center">
             <h1 className="font-black tracking-tight text-gray-900 mb-4 uppercase leading-none text-center">
-              <span className="text-4xl md:text-6xl text-red-600 block mb-2">POLICZ REFERENDUM</span>
-            </h1>
+  <span className="text-4xl md:text-6xl block mb-2">
+    <span className="text-gray-900">POLICZ</span>
+    <span className="text-red-600">REFERENDUM.PL</span>
+  </span>
+</h1>
             <p className="text-gray-600 text-base md:text-lg font-bold max-w-2xl mx-auto leading-relaxed">
               Postulujemy 4 zmiany do systemu referendalnego w Polsce.<br />Przywróćmy głos obywatelom!
             </p>
