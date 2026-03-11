@@ -7,7 +7,7 @@ import {
 // Baza danych dla 20 największych miast na podstawie dostarczonego raportu
 const citiesData = {
   "Warszawa": { u2025: 1370460, v2024: 785873 },
-  "Kraków": { u2025: 619988, v2024: 296665 },
+  "Kraków": { u2025: 619988, v2024: 264258 },
   "Wrocław": { u2025: 504889, v2024: 215456 },
   "Łódź": { u2025: 483930, v2024: 244567 },
   "Poznań": { u2025: 408734, v2024: 168945 },
